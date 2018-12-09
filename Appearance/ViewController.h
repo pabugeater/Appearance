@@ -7,9 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Appearance.h"
 
 @interface ViewController : UIViewController
 
+@property (nonatomic, retain ) Appearance *ap;
 
 @end
 

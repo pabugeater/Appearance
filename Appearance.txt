@@ -1,0 +1,18 @@
+Head:
+    <link rel="stylesheet" type="text/css" href="https://www.bigcatos.com/BigCatOs/styles/com_bigcatos_styles.css" />
+    <script type="text/javascript" src="https://www.bigcatos.com/BigCatOs/js/com_bigcatos_Appearance.js"></script>
+
+Image onclick:
+    onclick="doDarkMode( event )"
+
+Inject help div:
+    <div id=darkModeHelpDiv></div>
+
+Initialization:
+    <script>doDarkMode( Type );</script>
+    Type:
+        -1 macOS
+        -2 iOS
+        -3 BigCatOs star
+        -4 macOS + Solar Coaster
+        -5 iOS   + Solar Coaster
