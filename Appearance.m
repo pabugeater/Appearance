@@ -9,7 +9,11 @@
 
 @implementation Appearance
 
+#ifndef AppearanceX
 - (id) initWithFile:(NSString *)file owningViewController:(UIViewController *)viewController andFrame:(CGRect)frame {
+#else
+- (id) initWithFile:(NSString *)file owningViewController:(NSWindow *)viewController andFrame:(CGRect)frame {
+#endif
     
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     WKPreferences *pref = [[WKPreferences alloc] init];
@@ -21,7 +25,6 @@
         NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"MyCaches"];
         path = [path stringByAppendingPathComponent:file];
         if ( [[NSFileManager defaultManager] isReadableFileAtPath:path] == NO ) {
-            NSLog(@"DRAT########################################################=%@", file);
             NSString *fileName = [file stringByDeletingPathExtension];
             NSString *ext = [file pathExtension];
             path = [[NSBundle mainBundle] pathForResource:fileName ofType:ext];
@@ -57,7 +60,11 @@
     NSLog(@"didFailNavgication");
 }
 
+#ifndef AppearanceX
 - (void) addAppearanceConstraintsForView:(UIView *)containerView {
+#else
+- (void) addAppearanceConstraintsForView:(NSView *)containerView {
+#endif
     
     Appearance *ap = self;
     [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[ap]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(ap)]];
@@ -99,6 +106,7 @@
 
 -(void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))WVcompletionHandler {
     
+#ifndef AppearanceX
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Appearance", nil) message: message preferredStyle: UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK action") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) { WVcompletionHandler(); }];
     [alert addAction:okAction];
@@ -107,6 +115,14 @@
     } else {
         [self.viewController.presentedViewController presentViewController:alert animated:YES completion:nil];
     }
+#else
+    NSAlert *alert = [[NSAlert alloc] init];
+    [alert addButtonWithTitle:@"OK"];
+    [alert setMessageText:message];
+    [alert beginSheetModalForWindow:self.viewController completionHandler:^(NSModalResponse returnCode) {
+        WVcompletionHandler();
+    }];
+#endif
     
 } // end runJavaScriptAlertPanelWithMessage
 

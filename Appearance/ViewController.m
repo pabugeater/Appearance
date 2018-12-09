@@ -16,10 +16,7 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     
-    // Load Appearance.html.
-    
-    [super viewWillAppear:animated];
-    
+    [super viewWillAppear:animated];    
     self.ap = [[Appearance alloc] initWithFile:@"Appearance.html" owningViewController:self andFrame:self.view.bounds];
     [self.view addSubview:self.ap];
     [self.ap addAppearanceConstraintsForView:self.view];

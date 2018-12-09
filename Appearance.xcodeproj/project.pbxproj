@@ -18,6 +18,13 @@
 		7666462521BD78C000DB519B /* com_bigcatos_Appearance.js in Resources */ = {isa = PBXBuildFile; fileRef = 7666462221BD78C000DB519B /* com_bigcatos_Appearance.js */; };
 		7666462821BD799B00DB519B /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* Appearance.m */; };
 		7666462C21BD857F00DB519B /* AppearanceIcon-256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */; };
+		7666463521BDA1AF00DB519B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666463421BDA1AF00DB519B /* AppDelegate.m */; };
+		7666463821BDA1AF00DB519B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666463721BDA1AF00DB519B /* ViewController.m */; };
+		7666463A21BDA1B000DB519B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7666463921BDA1B000DB519B /* Assets.xcassets */; };
+		7666463D21BDA1B000DB519B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7666463B21BDA1B000DB519B /* Main.storyboard */; };
+		7666464021BDA1B000DB519B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666463F21BDA1B000DB519B /* main.m */; };
+		7666464521BDA60A00DB519B /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* Appearance.m */; };
+		7666464621BDAB6400DB519B /* Appearance.html in Resources */ = {isa = PBXBuildFile; fileRef = 7666462021BD78C000DB519B /* Appearance.html */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +44,27 @@
 		7666462621BD799A00DB519B /* Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appearance.m; sourceTree = "<group>"; };
 		7666462721BD799A00DB519B /* Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appearance.h; sourceTree = "<group>"; };
 		7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppearanceIcon-256x256.png"; sourceTree = "<group>"; };
+		7666463121BDA1AF00DB519B /* ApearanceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApearanceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7666463321BDA1AF00DB519B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		7666463421BDA1AF00DB519B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		7666463621BDA1AF00DB519B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		7666463721BDA1AF00DB519B /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7666463921BDA1B000DB519B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7666463C21BDA1B000DB519B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7666463E21BDA1B000DB519B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7666463F21BDA1B000DB519B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		7666464121BDA1B000DB519B /* AppearanceX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppearanceX.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		7666460321BD786C00DB519B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7666462E21BDA1AF00DB519B /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -60,6 +84,7 @@
 				7666462621BD799A00DB519B /* Appearance.m */,
 				7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */,
 				7666460821BD786C00DB519B /* Appearance */,
+				7666463221BDA1AF00DB519B /* AppearanceX */,
 				7666460721BD786C00DB519B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -68,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				7666460621BD786C00DB519B /* Appearance.app */,
+				7666463121BDA1AF00DB519B /* ApearanceX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +112,22 @@
 				7666461821BD786E00DB519B /* main.m */,
 			);
 			path = Appearance;
+			sourceTree = "<group>";
+		};
+		7666463221BDA1AF00DB519B /* AppearanceX */ = {
+			isa = PBXGroup;
+			children = (
+				7666463321BDA1AF00DB519B /* AppDelegate.h */,
+				7666463421BDA1AF00DB519B /* AppDelegate.m */,
+				7666463621BDA1AF00DB519B /* ViewController.h */,
+				7666463721BDA1AF00DB519B /* ViewController.m */,
+				7666463921BDA1B000DB519B /* Assets.xcassets */,
+				7666463B21BDA1B000DB519B /* Main.storyboard */,
+				7666463E21BDA1B000DB519B /* Info.plist */,
+				7666463F21BDA1B000DB519B /* main.m */,
+				7666464121BDA1B000DB519B /* AppearanceX.entitlements */,
+			);
+			path = AppearanceX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -108,6 +150,23 @@
 			productReference = 7666460621BD786C00DB519B /* Appearance.app */;
 			productType = "com.apple.product-type.application";
 		};
+		7666463021BDA1AF00DB519B /* ApearanceX */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 7666464221BDA1B000DB519B /* Build configuration list for PBXNativeTarget "ApearanceX" */;
+			buildPhases = (
+				7666462D21BDA1AF00DB519B /* Sources */,
+				7666462E21BDA1AF00DB519B /* Frameworks */,
+				7666462F21BDA1AF00DB519B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = ApearanceX;
+			productName = ApearanceX;
+			productReference = 7666463121BDA1AF00DB519B /* ApearanceX.app */;
+			productType = "com.apple.product-type.application";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -119,6 +178,14 @@
 				TargetAttributes = {
 					7666460521BD786C00DB519B = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					7666463021BDA1AF00DB519B = {
+						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 				};
 			};
@@ -136,6 +203,7 @@
 			projectRoot = "";
 			targets = (
 				7666460521BD786C00DB519B /* Appearance */,
+				7666463021BDA1AF00DB519B /* ApearanceX */,
 			);
 		};
 /* End PBXProject section */
@@ -155,6 +223,16 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		7666462F21BDA1AF00DB519B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7666463A21BDA1B000DB519B /* Assets.xcassets in Resources */,
+				7666464621BDAB6400DB519B /* Appearance.html in Resources */,
+				7666463D21BDA1B000DB519B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -166,6 +244,17 @@
 				7666461921BD786E00DB519B /* main.m in Sources */,
 				7666460B21BD786C00DB519B /* AppDelegate.m in Sources */,
 				7666462821BD799B00DB519B /* Appearance.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7666462D21BDA1AF00DB519B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7666463821BDA1AF00DB519B /* ViewController.m in Sources */,
+				7666464021BDA1B000DB519B /* main.m in Sources */,
+				7666463521BDA1AF00DB519B /* AppDelegate.m in Sources */,
+				7666464521BDA60A00DB519B /* Appearance.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -186,6 +275,14 @@
 				7666461521BD786E00DB519B /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		7666463B21BDA1B000DB519B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7666463C21BDA1B000DB519B /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -337,6 +434,46 @@
 			};
 			name = Release;
 		};
+		7666464321BDA1B000DB519B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6VN54MV749;
+				INFOPLIST_FILE = "$(SRCROOT)/AppearanceX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.AppearanceX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7666464421BDA1B000DB519B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				DEVELOPMENT_TEAM = 6VN54MV749;
+				INFOPLIST_FILE = "$(SRCROOT)/AppearanceX/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.AppearanceX;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -354,6 +491,15 @@
 			buildConfigurations = (
 				7666461D21BD786E00DB519B /* Debug */,
 				7666461E21BD786E00DB519B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		7666464221BDA1B000DB519B /* Build configuration list for PBXNativeTarget "ApearanceX" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				7666464321BDA1B000DB519B /* Debug */,
+				7666464421BDA1B000DB519B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
