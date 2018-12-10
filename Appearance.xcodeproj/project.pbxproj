@@ -47,7 +47,7 @@
 		7666462621BD799A00DB519B /* Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appearance.m; sourceTree = "<group>"; };
 		7666462721BD799A00DB519B /* Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appearance.h; sourceTree = "<group>"; };
 		7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppearanceIcon-256x256.png"; sourceTree = "<group>"; };
-		7666463121BDA1AF00DB519B /* ApearanceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ApearanceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7666463121BDA1AF00DB519B /* AppearanceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppearanceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7666463321BDA1AF00DB519B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7666463421BDA1AF00DB519B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7666463621BDA1AF00DB519B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				7666460621BD786C00DB519B /* Appearance.app */,
-				7666463121BDA1AF00DB519B /* ApearanceX.app */,
+				7666463121BDA1AF00DB519B /* AppearanceX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -153,9 +153,9 @@
 			productReference = 7666460621BD786C00DB519B /* Appearance.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7666463021BDA1AF00DB519B /* ApearanceX */ = {
+		7666463021BDA1AF00DB519B /* AppearanceX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7666464221BDA1B000DB519B /* Build configuration list for PBXNativeTarget "ApearanceX" */;
+			buildConfigurationList = 7666464221BDA1B000DB519B /* Build configuration list for PBXNativeTarget "AppearanceX" */;
 			buildPhases = (
 				7666462D21BDA1AF00DB519B /* Sources */,
 				7666462E21BDA1AF00DB519B /* Frameworks */,
@@ -165,9 +165,9 @@
 			);
 			dependencies = (
 			);
-			name = ApearanceX;
-			productName = ApearanceX;
-			productReference = 7666463121BDA1AF00DB519B /* ApearanceX.app */;
+			name = AppearanceX;
+			productName = AppearanceX;
+			productReference = 7666463121BDA1AF00DB519B /* AppearanceX.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -206,7 +206,7 @@
 			projectRoot = "";
 			targets = (
 				7666460521BD786C00DB519B /* Appearance */,
-				7666463021BDA1AF00DB519B /* ApearanceX */,
+				7666463021BDA1AF00DB519B /* AppearanceX */,
 			);
 		};
 /* End PBXProject section */
@@ -503,7 +503,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7666464221BDA1B000DB519B /* Build configuration list for PBXNativeTarget "ApearanceX" */ = {
+		7666464221BDA1B000DB519B /* Build configuration list for PBXNativeTarget "AppearanceX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7666464321BDA1B000DB519B /* Debug */,

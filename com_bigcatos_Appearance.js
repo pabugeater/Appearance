@@ -21,7 +21,7 @@
 // <script>com_bigcatos_doDarkMode( -2 );</script>
 //
 // Specialized usage using evaluateJavaScript :
-// com_bigcatos_setJsState( "dark", "DarkModeHelpDisplayed" );com_bigcatos_doDarkMode( -2 ); com_bigcatos_removeHelpDiv();
+// com_bigcatos_setJsState( "dark", "DarkModeHelpDisplayed" ); com_bigcatos_doDarkMode( -2 ); com_bigcatos_removeHelpDiv();
 
 var version = 1.1;
 

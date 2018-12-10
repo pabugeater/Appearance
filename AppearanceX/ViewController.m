@@ -10,8 +10,6 @@
 
 @implementation ViewController
 
-@synthesize ap;
-
 - (void)viewWillAppear {
     
     [super viewWillAppear];

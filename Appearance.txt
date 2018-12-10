@@ -3,16 +3,18 @@ Head:
     <script type="text/javascript" src="https://www.bigcatos.com/BigCatOs/js/com_bigcatos_Appearance.js"></script>
 
 Image onclick:
-    onclick="doDarkMode( event )"
+    onclick="com_bigcatos_doDarkMode( event )"
 
 Inject help div:
-    <div id=darkModeHelpDiv></div>
+    <div id=com_bigcatos_darkModeHelpDiv></div>
 
 Initialization:
-    <script>doDarkMode( Type );</script>
-    Type:
-        -1 macOS
-        -2 iOS
-        -3 BigCatOs star
-        -4 macOS + Solar Coaster
-        -5 iOS   + Solar Coaster
+    <script>com_bigcatos_doDarkMode( Type );</script>
+        or, if using the Appearance class, it will do the task for you via JavaScript:
+    com_bigcatos_setJsState( "dark", "DarkModeHelpDisplayed" ); com_bigcatos_doDarkMode( Type ); com_bigcatos_removeHelpDiv();
+        Type:
+            -1 macOS
+            -2 iOS
+            -3 BigCatOs star
+            -4 macOS + Solar Coaster
+            -5 iOS   + Solar Coaster

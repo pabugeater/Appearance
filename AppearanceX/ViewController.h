@@ -10,9 +10,7 @@
 #import <Cocoa/Cocoa.h>
 #import "Appearance.h"
 
-@interface ViewController : NSViewController {
-    Appearance *ap;
-}
+@interface ViewController : NSViewController
 
 @property (nonatomic, retain ) Appearance *ap;
 
