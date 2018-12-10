@@ -23,11 +23,10 @@
 // Specialized usage using evaluateJavaScript :
 // com_bigcatos_setJsState( "dark", "DarkModeHelpDisplayed" ); com_bigcatos_doDarkMode( -2 ); com_bigcatos_removeHelpDiv();
 
+var customType = -1;
 var version = 1.1;
 
 function com_bigcatos_doDarkMode(event) {
-    
-    var customType = -1;
 
     if (event < 0 ) { // initialization
         customType = event;
@@ -89,7 +88,7 @@ function com_bigcatos_doDarkMode(event) {
     // Toggle appearance, possibly.
     
     var darkMode = sessionStorage.getItem("com_bigcatos_darkMode"); // current appearance
-    if ( event != -1 && event != -2 && event != -3 && event != -4 && event != -5 && event != -999 ) {
+    if ( event != -1 && event != -2 && event != -3 && event != -4 && event != -5 ) {
         var type = event.type
         if ( type == 'keydown' ) {
             var  keynum = event.key;
