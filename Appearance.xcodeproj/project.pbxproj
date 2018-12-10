@@ -25,6 +25,9 @@
 		7666464021BDA1B000DB519B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666463F21BDA1B000DB519B /* main.m */; };
 		7666464521BDA60A00DB519B /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* Appearance.m */; };
 		7666464621BDAB6400DB519B /* Appearance.html in Resources */ = {isa = PBXBuildFile; fileRef = 7666462021BD78C000DB519B /* Appearance.html */; };
+		769F1B8B21BDDF8D007C541B /* Appearance.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7666462121BD78C000DB519B /* Appearance.txt */; };
+		76E54CC821BDC3720077F48D /* AppearanceIcon-256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */; };
+		76E54CC921BDC40D0077F48D /* com_bigcatos_Appearance.js in Resources */ = {isa = PBXBuildFile; fileRef = 7666462221BD78C000DB519B /* com_bigcatos_Appearance.js */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -227,9 +230,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				769F1B8B21BDDF8D007C541B /* Appearance.txt in Resources */,
 				7666463A21BDA1B000DB519B /* Assets.xcassets in Resources */,
+				76E54CC821BDC3720077F48D /* AppearanceIcon-256x256.png in Resources */,
 				7666464621BDAB6400DB519B /* Appearance.html in Resources */,
 				7666463D21BDA1B000DB519B /* Main.storyboard in Resources */,
+				76E54CC921BDC40D0077F48D /* com_bigcatos_Appearance.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -447,7 +453,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.AppearanceX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
@@ -467,7 +473,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.AppearanceX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;

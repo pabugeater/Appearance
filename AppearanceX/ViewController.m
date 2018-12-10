@@ -12,7 +12,6 @@
 
 @synthesize ap;
 
-
 - (void)viewWillAppear {
     
     [super viewWillAppear];

@@ -90,7 +90,6 @@
         NSArray *toks = [rc componentsSeparatedByString:@"|"];
         darkMode = toks[0];
         darkModeHelp = toks[1];
-        NSLog(@"saveState darkMode=%@, darkModeHelp=%@", darkMode, darkModeHelp);
         if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @" ";
         if ( ! darkModeHelp || [darkModeHelp length] == 0 || [darkModeHelp isEqualToString:@"null"] ) darkModeHelp = @"darkModeHelpNotDisplayed";
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
