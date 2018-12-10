@@ -1,6 +1,4 @@
 
-#define AppearanceX
-
 //
 //  ViewController.h
 //  AppearanceX

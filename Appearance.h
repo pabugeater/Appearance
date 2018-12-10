@@ -5,14 +5,6 @@
 //  Created by Steve Lidie on 12/8/18.
 //
 
-
-/////  DEBUG DEBUG
-
-#define AppearanceX
-
-/////  DEBUG DEBUG
-
-
 #ifndef AppearanceX
 #import <UIKit/UIKit.h>
 #endif
