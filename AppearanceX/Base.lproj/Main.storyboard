@@ -663,7 +663,7 @@
                                     <items>
                                         <menuItem title="AppearanceX Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
-                                                <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
+                                                <action selector="doHelpAction:" target="Voe-Tx-rLC" id="ZQp-ef-ulc"/>
                                             </connections>
                                         </menuItem>
                                     </items>

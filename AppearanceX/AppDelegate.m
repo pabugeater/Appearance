@@ -14,4 +14,34 @@
     return YES;
 }
 
+- (IBAction) doHelpAction:(id)sender {
+    
+    if ( self.hwc ) {
+        NSString *js = @"com_bigcatos_doDarkMode( -999 );";
+        //[self.ap evaluateJavaScript:js completionHandler:nil];
+        [self.hwc showWindow:nil];
+        return;
+    }
+    NSLog(@"create help window an AP");
+    self.hwc = [[HelpWindowController alloc] initWithWindowNibName:@"HelpWindowController"];
+    NSWindow *w = self.hwc.window; // referencing the window instantiates and displays it
+    NSView *v = w.contentView;
+    self.ap = [[Appearance alloc] initWithFile:@"Appearance.html" owningViewController:w andFrame:v.frame];
+    [v addSubview:self.ap];
+    [self.ap addAppearanceConstraintsForView:v];
+    [w makeKeyAndOrderFront:self];
+    
+} // end doHelpAction
+
+- (BOOL)validateUserInterfaceItem:(id < NSValidatedUserInterfaceItem >)anItem {
+    
+    SEL theAction = [anItem action];
+    if ( theAction == @selector(doHelpAction:) ) {
+        return YES;
+    } else {
+        return NO;
+    }
+    
+} // end validateUserInterfaceItem
+
 @end

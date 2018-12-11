@@ -7,8 +7,13 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "HelpWindowController.h"
+#import "Appearance.h"
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
+
+@property (nonatomic, strong) HelpWindowController *hwc;
+@property (nonatomic, strong) Appearance *ap;
 
 @end
 

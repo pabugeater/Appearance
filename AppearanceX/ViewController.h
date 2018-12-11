@@ -9,8 +9,9 @@
 
 #import <Cocoa/Cocoa.h>
 #import "Appearance.h"
+#import "AppDelegate.h"
 
-@interface ViewController : NSViewController
+@interface ViewController : NSViewController <NSWindowDelegate>
 
 @property (nonatomic, retain ) Appearance *ap;
 

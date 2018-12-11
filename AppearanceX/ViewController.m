@@ -13,11 +13,22 @@
 - (void)viewWillAppear {
     
     [super viewWillAppear];
+    [[NSApplication sharedApplication] mainWindow].delegate = self;
+    
     self.ap = [[Appearance alloc] initWithFile:@"Appearance.html" owningViewController:self.view.window andFrame:self.view.bounds];
     [self.view addSubview:self.ap];
     [self.ap addAppearanceConstraintsForView:self.view];
 
 }  // end viewWillAppear
+
+- (void)windowWillClose:(NSNotification *)notification {
+    
+    AppDelegate *delegate = [[NSApplication sharedApplication] delegate];
+    if ( delegate.hwc ) {
+        [delegate.hwc close];
+    }
+    
+} // end windowWillClose
 
 - (void)setRepresentedObject:(id)representedObject {
     [super setRepresentedObject:representedObject];
