@@ -30,6 +30,10 @@
             path = [[NSBundle mainBundle] pathForResource:fileName ofType:ext];
         }
         NSString *path2HTML = path;
+        if ( ! path2HTML ) {
+            NSLog(@"Appearance HTML file not found: %@", file);
+            return nil;
+        }
         NSString *u1 = [path2HTML stringByDeletingLastPathComponent];
         NSURL *baseURL = [NSURL fileURLWithPath:u1];
         self.UIDelegate = self;
