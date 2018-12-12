@@ -20,5 +20,5 @@ Initialization:
             -5 iOS   + Solar Coaster
 
 Build note:
-    To compile the Appearance class in macOS add "AppearanceX=1" to the target's C Preprocessor section.
+    To compile the Appearance class in macOS add "kAppearanceX=1" to the target's C Preprocessor section.
 

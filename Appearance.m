@@ -60,12 +60,8 @@
     NSLog(@"didFailNavgication");
 }
 
-#ifndef AppearanceX
-- (void) addAppearanceConstraintsForView:(UIView *)containerView {
-#else
-- (void) addAppearanceConstraintsForView:(NSView *)containerView {
-#endif
-    
+- (void) addAppearanceConstraintsForView:(id)containerView {
+
     Appearance *ap = self;
     [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[ap]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(ap)]];
     [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[ap]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(ap)]];
@@ -105,7 +101,7 @@
 
 -(void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))WVcompletionHandler {
     
-#ifndef AppearanceX
+#ifndef kAppearanceX
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Appearance", nil) message: message preferredStyle: UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK action") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) { WVcompletionHandler(); }];
     [alert addAction:okAction];
