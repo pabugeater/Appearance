@@ -16,13 +16,8 @@
 
 - (IBAction) doHelpAction:(id)sender {
     
-    if ( self.hwc ) {
-        NSString *js = @"com_bigcatos_doDarkMode( -999 );";
-        //[self.ap evaluateJavaScript:js completionHandler:nil];
-        [self.hwc showWindow:nil];
-        return;
-    }
-    NSLog(@"create help window an AP");
+    [self.hwc close];
+    self.hwc = nil;
     self.hwc = [[HelpWindowController alloc] initWithWindowNibName:@"HelpWindowController"];
     NSWindow *w = self.hwc.window; // referencing the window instantiates and displays it
     NSView *v = w.contentView;

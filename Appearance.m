@@ -53,7 +53,7 @@
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     NSString *darkMode = [defaults objectForKey:@"darkMode"];
     NSString *darkModeHelp = [defaults objectForKey:@"darkModeHelp"];
-    if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @" ";
+    if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
     if ( ! darkModeHelp || [darkModeHelp length] == 0 || [darkModeHelp isEqualToString:@"null"] ) darkModeHelp = @"darkModeHelpNotDisplayed";
     NSString *js = [NSString stringWithFormat:@"com_bigcatos_setJsState( \"%@\", \"%@\" );com_bigcatos_doDarkMode( -2 ); com_bigcatos_removeHelpDiv();  ", darkMode, darkModeHelp];
     [self evaluateJavaScript:js completionHandler:nil];
@@ -94,7 +94,7 @@
         NSArray *toks = [rc componentsSeparatedByString:@"|"];
         darkMode = toks[0];
         darkModeHelp = toks[1];
-        if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @" ";
+        if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
         if ( ! darkModeHelp || [darkModeHelp length] == 0 || [darkModeHelp isEqualToString:@"null"] ) darkModeHelp = @"darkModeHelpNotDisplayed";
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:darkMode forKey:@"darkMode"];
