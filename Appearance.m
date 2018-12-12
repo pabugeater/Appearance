@@ -9,11 +9,7 @@
 
 @implementation Appearance
 
-#ifndef AppearanceX
-- (id) initWithFile:(NSString *)file owningViewController:(UIViewController *)viewController andFrame:(CGRect)frame {
-#else
-- (id) initWithFile:(NSString *)file owningViewController:(NSWindow *)viewController andFrame:(CGRect)frame {
-#endif
+- (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame {
     
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     WKPreferences *pref = [[WKPreferences alloc] init];
@@ -38,7 +34,7 @@
         NSURL *baseURL = [NSURL fileURLWithPath:u1];
         self.UIDelegate = self;
         self.navigationDelegate = self;
-        self.viewController = viewController;
+        self.contentController = contentController; // UIViewController or NSWindow (from NSWindowController or NSView)
         self.translatesAutoresizingMaskIntoConstraints = NO;
         [self loadFileURL:[NSURL fileURLWithPath:path2HTML] allowingReadAccessToURL:baseURL];
         return self;
@@ -113,16 +109,18 @@
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Appearance", nil) message: message preferredStyle: UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK action") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) { WVcompletionHandler(); }];
     [alert addAction:okAction];
-    if ( self.viewController.presentedViewController == nil ) {
-        [self.viewController presentViewController:alert animated:YES completion:nil];
+    UIViewController *vc = self.contentController;
+    if ( vc.presentedViewController == nil ) {
+        [vc                         presentViewController:alert animated:YES completion:nil];
     } else {
-        [self.viewController.presentedViewController presentViewController:alert animated:YES completion:nil];
+        [vc.presentedViewController presentViewController:alert animated:YES completion:nil];
     }
 #else
     NSAlert *alert = [[NSAlert alloc] init];
     [alert addButtonWithTitle:@"OK"];
     [alert setMessageText:message];
-    [alert beginSheetModalForWindow:self.viewController completionHandler:^(NSModalResponse returnCode) {
+    NSWindowController *wc = self.contentController;
+    [alert beginSheetModalForWindow:wc.window completionHandler:^(NSModalResponse returnCode) {
         WVcompletionHandler();
     }];
 #endif

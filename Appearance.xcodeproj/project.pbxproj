@@ -85,12 +85,12 @@
 		766645FD21BD786C00DB519B = {
 			isa = PBXGroup;
 			children = (
-				7666462021BD78C000DB519B /* Appearance.html */,
-				7666462221BD78C000DB519B /* com_bigcatos_Appearance.js */,
 				7666462121BD78C000DB519B /* Appearance.txt */,
 				7666462721BD799A00DB519B /* Appearance.h */,
 				7666462621BD799A00DB519B /* Appearance.m */,
+				7666462021BD78C000DB519B /* Appearance.html */,
 				7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */,
+				7666462221BD78C000DB519B /* com_bigcatos_Appearance.js */,
 				7666460821BD786C00DB519B /* Appearance */,
 				7666463221BDA1AF00DB519B /* AppearanceX */,
 				7666460721BD786C00DB519B /* Products */,

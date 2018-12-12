@@ -14,21 +14,12 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface Appearance : WKWebView <WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate>
 
-#ifndef AppearanceX
-@property( nonatomic, strong ) UIViewController *viewController;
-#else
-@property( nonatomic, strong ) NSWindow *viewController;
-#endif
+@property( nonatomic, strong ) id contentController;
 
-#ifndef AppearanceX
-- (id) initWithFile:(NSString *)file owningViewController:(UIViewController *)viewController andFrame:(CGRect)frame;
-- (void) addAppearanceConstraintsForView:(UIView *)view;
+- (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame;
+- (void) addAppearanceConstraintsForView:(id)view;
 - (void) saveState;
-#else
-- (id) initWithFile:(NSString *)file owningViewController:(NSWindow *)viewController andFrame:(CGRect)frame;
-- (void) addAppearanceConstraintsForView:(NSView *)view;
-- (void) saveState;
-#endif
+
 
 @end
 

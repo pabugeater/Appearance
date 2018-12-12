@@ -24,7 +24,7 @@
 // com_bigcatos_setJsState( "dark", "DarkModeHelpDisplayed" ); com_bigcatos_doDarkMode( -2 ); com_bigcatos_removeHelpDiv();
 
 var customType = -1;
-var version = 1.2;
+var version = '1.fixme';
 
 function com_bigcatos_doDarkMode(event) {
 

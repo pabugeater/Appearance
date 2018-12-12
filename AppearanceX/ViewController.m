@@ -15,7 +15,7 @@
     [super viewWillAppear];
     [[NSApplication sharedApplication] mainWindow].delegate = self;
     
-    self.ap = [[Appearance alloc] initWithFile:@"Appearance.html" owningViewController:self.view.window andFrame:self.view.bounds];
+    self.ap = [[Appearance alloc] initWithFile:@"Appearance.html" contentController:self.view andFrame:self.view.bounds];
     [self.view addSubview:self.ap];
     [self.ap addAppearanceConstraintsForView:self.view];
 

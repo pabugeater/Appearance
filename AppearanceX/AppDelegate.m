@@ -21,7 +21,7 @@
     self.hwc = [[HelpWindowController alloc] initWithWindowNibName:@"HelpWindowController"];
     NSWindow *w = self.hwc.window; // referencing the window instantiates and displays it
     NSView *v = w.contentView;
-    self.ap = [[Appearance alloc] initWithFile:@"Appearance.html" owningViewController:w andFrame:v.frame];
+    self.ap = [[Appearance alloc] initWithFile:@"Appearance.html" contentController:self.hwc andFrame:v.frame];
     [v addSubview:self.ap];
     [self.ap addAppearanceConstraintsForView:v];
     [w makeKeyAndOrderFront:self];
