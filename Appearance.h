@@ -1,6 +1,5 @@
 //
-//  Appearance.h
-//  GO-21
+//  Appearance.h, Ver 1.fixme
 //
 //  Created by Steve Lidie on 12/8/18.
 //

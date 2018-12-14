@@ -1,3 +1,6 @@
+
+Appearance Notes, Ver 1.fixme
+
 Head:
     <link rel="stylesheet" type="text/css" href="https://www.bigcatos.com/BigCatOs/styles/com_bigcatos_styles.css" />
     <script type="text/javascript" src="https://www.bigcatos.com/BigCatOs/js/com_bigcatos_Appearance.js"></script>
@@ -10,7 +13,7 @@ Inject help div:
 
 Initialization:
     <script>com_bigcatos_doDarkMode( Type );</script>
-        or, if using the Appearance class, it will do the task for you via JavaScript:
+        or, if using the Appearance class in an iOS or macOS App, it will do the task for you via JavaScript:
     com_bigcatos_setJsState( "dark", "DarkModeHelpDisplayed" ); com_bigcatos_doDarkMode( Type ); com_bigcatos_removeHelpDiv();
         Type:
             -1 macOS
@@ -19,6 +22,8 @@ Initialization:
             -4 macOS + Solar Coaster
             -5 iOS   + Solar Coaster
 
-Build note:
-    To compile the Appearance class in macOS add "kAppearanceX=1" to the target's C Preprocessor section.
+Build notes:
+    - To compile the Appearance class in macOS add "kAppearanceX=1" to the target's C Preprocessor section.
+    - Force source file Appearance.m into bundle Resources folder via a custom build phase Copy Files script.
+      Impossible to do this in standard Copy Bundle Resources phase.  Required for Appearance.sh.
 

@@ -26,11 +26,28 @@
 		7666464521BDA60A00DB519B /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* Appearance.m */; };
 		7666464621BDAB6400DB519B /* Appearance.html in Resources */ = {isa = PBXBuildFile; fileRef = 7666462021BD78C000DB519B /* Appearance.html */; };
 		769F1B8B21BDDF8D007C541B /* Appearance.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7666462121BD78C000DB519B /* Appearance.txt */; };
+		76BD946221C364F100EF30E6 /* Appearance.h in Resources */ = {isa = PBXBuildFile; fileRef = 7666462721BD799A00DB519B /* Appearance.h */; };
+		76BD946621C36CF400EF30E6 /* Appearance.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* Appearance.m */; };
 		76C9F38A21BFE2BE008B06D8 /* HelpWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9F38721BFE2BE008B06D8 /* HelpWindowController.xib */; };
 		76C9F38B21BFE2BE008B06D8 /* HelpWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C9F38821BFE2BE008B06D8 /* HelpWindowController.m */; };
+		76E4BC8021C1E9D4008A7ECD /* Appearance.sh in Resources */ = {isa = PBXBuildFile; fileRef = 76E4BC7F21C1E9D4008A7ECD /* Appearance.sh */; };
+		76E4BC8121C1E9D4008A7ECD /* Appearance.sh in Resources */ = {isa = PBXBuildFile; fileRef = 76E4BC7F21C1E9D4008A7ECD /* Appearance.sh */; };
 		76E54CC821BDC3720077F48D /* AppearanceIcon-256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */; };
 		76E54CC921BDC40D0077F48D /* com_bigcatos_Appearance.js in Resources */ = {isa = PBXBuildFile; fileRef = 7666462221BD78C000DB519B /* com_bigcatos_Appearance.js */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		76BD946521C36CE400EF30E6 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+				76BD946621C36CF400EF30E6 /* Appearance.m in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		7666460621BD786C00DB519B /* Appearance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appearance.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -62,6 +79,7 @@
 		76C9F38721BFE2BE008B06D8 /* HelpWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpWindowController.xib; sourceTree = "<group>"; };
 		76C9F38821BFE2BE008B06D8 /* HelpWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpWindowController.m; sourceTree = "<group>"; };
 		76C9F38921BFE2BE008B06D8 /* HelpWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpWindowController.h; sourceTree = "<group>"; };
+		76E4BC7F21C1E9D4008A7ECD /* Appearance.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Appearance.sh; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +103,7 @@
 		766645FD21BD786C00DB519B = {
 			isa = PBXGroup;
 			children = (
+				76E4BC7F21C1E9D4008A7ECD /* Appearance.sh */,
 				7666462121BD78C000DB519B /* Appearance.txt */,
 				7666462721BD799A00DB519B /* Appearance.h */,
 				7666462621BD799A00DB519B /* Appearance.m */,
@@ -168,6 +187,7 @@
 				7666462D21BDA1AF00DB519B /* Sources */,
 				7666462E21BDA1AF00DB519B /* Frameworks */,
 				7666462F21BDA1AF00DB519B /* Resources */,
+				76BD946521C36CE400EF30E6 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -230,6 +250,7 @@
 				7666461321BD786E00DB519B /* Assets.xcassets in Resources */,
 				7666462321BD78C000DB519B /* Appearance.html in Resources */,
 				7666461121BD786C00DB519B /* Main.storyboard in Resources */,
+				76E4BC8021C1E9D4008A7ECD /* Appearance.sh in Resources */,
 				7666462C21BD857F00DB519B /* AppearanceIcon-256x256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -238,12 +259,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76BD946221C364F100EF30E6 /* Appearance.h in Resources */,
 				76C9F38A21BFE2BE008B06D8 /* HelpWindowController.xib in Resources */,
 				769F1B8B21BDDF8D007C541B /* Appearance.txt in Resources */,
 				7666463A21BDA1B000DB519B /* Assets.xcassets in Resources */,
 				76E54CC821BDC3720077F48D /* AppearanceIcon-256x256.png in Resources */,
 				7666464621BDAB6400DB519B /* Appearance.html in Resources */,
 				7666463D21BDA1B000DB519B /* Main.storyboard in Resources */,
+				76E4BC8121C1E9D4008A7ECD /* Appearance.sh in Resources */,
 				76E54CC921BDC40D0077F48D /* com_bigcatos_Appearance.js in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
