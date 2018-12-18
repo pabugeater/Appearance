@@ -69,6 +69,7 @@ function com_bigcatos_doDarkMode(event) {
                            function() {
                                 help.style.opacity = 0.0;
                                 sessionStorage.setItem( "com_bigcatos_darkModeHelp", "DarkModeHelpDisplayed" );
+                                com_bigcatos_saveState(); // synch to NSUserDefaults
                                 while( help.firstChild ) {
                                     help.removeChild( help.firstChild );
                                 }
@@ -136,14 +137,8 @@ function com_bigcatos_doDarkMode(event) {
         }
     }
     sessionStorage.setItem( "com_bigcatos_darkMode", darkMode ); // save current appearance
-    try {
-        window.webkit.messageHandlers.doAppearanceAction.postMessage("saveState");
-    }
-    finally {
-        //Block of code to be executed regardless of the try / catch result
-    }
+    com_bigcatos_saveState(); // synch to NSUserDefaults
 
-    
 } // end com_bigcatos_doDarkMode
 
 function com_bigcatos_colorLinks(hex) {
@@ -167,6 +162,36 @@ function com_bigcatos_getJsState () {
     
 } // end com_bigcatos_getJsState
 
+function com_bigcatos_removeHelpDiv ( ) {
+    
+    window.onload();
+    
+} // end com_bigcatos_removeHelperDiv
+
+function com_bigcatos_saveState ( ) {
+    
+    // Send a saveState message to our Objective-C wrapper to update NSUserDefaults.
+    
+    try {
+        window.webkit.messageHandlers.doAppearanceAction.postMessage("saveState");
+    }
+    finally {
+        //Block of code to be executed regardless of the try / catch result
+    }
+
+} // end com_bigcatos_saveState
+
+function com_bigcatos_setExplicitAppearance ( appearance, darkModeHelp ) { // appearance --> "dark" : ""
+
+    var isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)?true:false;
+    var isIOS = navigator.platform.match(/(iPhone|iPod|iPad)/i)?true:false;
+    var type = ( isIOS ? -2 : -1 );
+    com_bigcatos_setJsState( appearance, darkModeHelp );
+    com_bigcatos_doDarkMode( type );
+    com_bigcatos_removeHelpDiv();
+    
+} // com_bigcatos_setExplicitAppearance
+
 function com_bigcatos_setJsState ( darkMode, darkModeHelp ) {
     
     // Initialize session storage for doDarkMode().
@@ -175,10 +200,3 @@ function com_bigcatos_setJsState ( darkMode, darkModeHelp ) {
     sessionStorage.setItem( "com_bigcatos_darkModeHelp", darkModeHelp);
     
 } // end com_bigcatos_setJsState
-
-function com_bigcatos_removeHelpDiv ( ) {
-    
-    window.onload();
-    
-} // end com_bigcatos_setJsState
-

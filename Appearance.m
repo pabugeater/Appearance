@@ -36,6 +36,11 @@
         self.contentController = contentController; // UIViewController or NSWindow (from NSWindowController or NSView)
         self.translatesAutoresizingMaskIntoConstraints = NO;
         [self loadFileURL:[NSURL fileURLWithPath:path2HTML] allowingReadAccessToURL:baseURL];
+        self.checkJsStatus = ^(NSString *rc, NSError *error) {
+            if ( error ) {
+                NSLog(@"checkJsStatus :  rc=%@, error=%@", rc, error);
+            }
+        };
         return self;
     } else {
         return nil;
@@ -46,12 +51,18 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+#ifdef kAppearanceX
+    NSString *darkMode = [NSApplication sharedApplication].effectiveAppearance.name;
+    darkMode = ( darkMode == NSAppearanceNameDarkAqua ? @"dark" : @"" );
+    [defaults setObject:darkMode forKey:@"darkMode"];
+#else
     NSString *darkMode = [defaults objectForKey:@"darkMode"];
-    NSString *darkModeHelp = [defaults objectForKey:@"darkModeHelp"];
     if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
-    if ( ! darkModeHelp || [darkModeHelp length] == 0 || [darkModeHelp isEqualToString:@"null"] ) darkModeHelp = @"darkModeHelpNotDisplayed";
-    NSString *js = [NSString stringWithFormat:@"com_bigcatos_setJsState( \"%@\", \"%@\" );com_bigcatos_doDarkMode( -2 ); com_bigcatos_removeHelpDiv();  ", darkMode, darkModeHelp];
-    [self evaluateJavaScript:js completionHandler:nil];
+#endif
+    NSString *darkModeHelp = [defaults objectForKey:@"darkModeHelp"];
+    if ( ! darkModeHelp || [darkModeHelp length] == 0 || [darkModeHelp isEqualToString:@"null"]|| [darkModeHelp isEqualToString:@"undefined"] ) darkModeHelp = @"darkModeHelpNotDisplayed";
+    NSString *js = [NSString stringWithFormat:@"com_bigcatos_setExplicitAppearance( \"%@\", \"%@\" ); ", darkMode, darkModeHelp];
+    [self evaluateJavaScript:js completionHandler:self.checkJsStatus];
     
 } // end didFinishNavigation
 
@@ -80,7 +91,12 @@
 
 - (void) saveState {
     
+    // Fetch the JavaScript session variables and update NSUserDefaults to match.
+    
     void(^getJsState)(NSString *, NSError *) = ^(NSString *rc, NSError *error) {
+        if ( error ) {
+            NSLog(@"getJsState :  rc=%@, error=%@", rc, error);
+        }
         NSString *darkMode, *darkModeHelp;
         NSArray *toks = [rc componentsSeparatedByString:@"|"];
         darkMode = toks[0];

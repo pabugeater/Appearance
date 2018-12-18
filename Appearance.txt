@@ -13,8 +13,11 @@ Inject help div:
 
 Initialization:
     <script>com_bigcatos_doDarkMode( Type );</script>
+
         or, if using the Appearance class in an iOS or macOS App, it will do the task for you via JavaScript:
-    com_bigcatos_setJsState( "dark", "DarkModeHelpDisplayed" ); com_bigcatos_doDarkMode( Type ); com_bigcatos_removeHelpDiv();
+
+    com_bigcatos_setExplicitAppearance(( "dark", "DarkModeHelpDisplayed" );
+
         Type:
             -1 macOS
             -2 iOS

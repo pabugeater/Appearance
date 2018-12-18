@@ -10,4 +10,15 @@
 
 @implementation AppDelegate
 
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
+    
+    NSBundle *bundle = [NSBundle mainBundle];
+    NSDictionary *infoPlist = [bundle infoDictionary];
+    NSString *appVersion = (NSString *)[infoPlist objectForKey:@"CFBundleShortVersionString"];
+    NSString *appBuild = (NSString *)[infoPlist objectForKey:@"CFBundleVersion"];
+    self.version = [NSString stringWithFormat:@"%@(%@)", appVersion, appBuild];
+    NSLog(@"### Appearance version %@.", self.version);
+    
+}
+
 @end

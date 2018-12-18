@@ -16,7 +16,6 @@
     NSDictionary *infoPlist = [bundle infoDictionary];
     NSString *appVersion = (NSString *)[infoPlist objectForKey:@"CFBundleShortVersionString"];
     NSString *appBuild = (NSString *)[infoPlist objectForKey:@"CFBundleVersion"];
-    self.macOSMode = [[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"];
     self.version = [NSString stringWithFormat:@"%@(%@)", appVersion, appBuild];
     NSLog(@"### Appearance version %@, macOSMode=%@.", self.version, self.macOSMode);
     

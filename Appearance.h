@@ -14,6 +14,7 @@ NS_ASSUME_NONNULL_BEGIN
 @interface Appearance : WKWebView <WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate>
 
 @property( nonatomic, strong ) id contentController;
+@property( nonatomic, copy ) void(^checkJsStatus)(NSString *returnCode, NSError *error);
 
 - (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame;
 - (void) addAppearanceConstraintsForView:(id)view;
