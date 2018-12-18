@@ -51,12 +51,18 @@
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *darkMode;
 #ifdef kAppearanceX
-    NSString *darkMode = [NSApplication sharedApplication].effectiveAppearance.name;
-    darkMode = ( darkMode == NSAppearanceNameDarkAqua ? @"dark" : @"" );
-    [defaults setObject:darkMode forKey:@"darkMode"];
+    if (@available(macOS 10.14, *)) {
+        darkMode = [NSApplication sharedApplication].effectiveAppearance.name;
+        darkMode = ( darkMode == NSAppearanceNameDarkAqua ? @"dark" : @"" );
+        [defaults setObject:darkMode forKey:@"darkMode"];
+    } else {
+        darkMode = [defaults objectForKey:@"darkMode"];
+        if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
+    }
 #else
-    NSString *darkMode = [defaults objectForKey:@"darkMode"];
+    darkMode = [defaults objectForKey:@"darkMode"];
     if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
 #endif
     NSString *darkModeHelp = [defaults objectForKey:@"darkModeHelp"];
