@@ -22,8 +22,8 @@ Initialization:
             -1 macOS
             -2 iOS
             -3 BigCatOs star
-            -4 macOS + Solar Coaster
-            -5 iOS   + Solar Coaster
+            -4 Solar Coaster start in Dark mode
+            -5 Solar Coaster start in Light mode
 
 Build notes:
     - To compile the Appearance class in macOS add "kAppearanceX=1" to the target's C Preprocessor section.

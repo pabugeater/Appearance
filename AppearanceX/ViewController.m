@@ -14,7 +14,9 @@
 
     AppDelegate *delegate = [[NSApplication sharedApplication] delegate];
     delegate.macOSMode = [[[NSUserDefaults standardUserDefaults] stringForKey:@"AppleInterfaceStyle"] isEqualToString:@"Dark"] ? @"dark" : @"";
-    [NSDistributedNotificationCenter.defaultCenter addObserver:self selector:@selector(themeChanged:) name:@"AppleInterfaceThemeChangedNotification" object: nil];
+    if (@available(macOS 10.14, *)) {
+        [NSDistributedNotificationCenter.defaultCenter addObserver:self selector:@selector(themeChanged:) name:@"AppleInterfaceThemeChangedNotification" object: nil];
+    }
 
 } // end viewDidLoad
 
@@ -43,7 +45,11 @@
     AppDelegate *delegate = [[NSApplication sharedApplication] delegate];
     NSApplication *app = [ NSApplication sharedApplication];
     NSString *currentAppearance = app.effectiveAppearance.name;
-    delegate.macOSMode = ( currentAppearance == NSAppearanceNameDarkAqua ? @"" : @"dark" ); // toggle
+    if (@available(macOS 10.14, *)) {
+        delegate.macOSMode = ( currentAppearance == NSAppearanceNameDarkAqua ? @"" : @"dark" );
+    } else {
+        // Fallback on earlier versions
+    } // toggle
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults setObject:delegate.macOSMode forKey:@"darkMode"];
     [defaults synchronize];

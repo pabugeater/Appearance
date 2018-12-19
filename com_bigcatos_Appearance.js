@@ -186,6 +186,10 @@ function com_bigcatos_setExplicitAppearance ( appearance, darkModeHelp ) { // ap
     var isMacLike = navigator.platform.match(/(Mac|iPhone|iPod|iPad)/i)?true:false;
     var isIOS = navigator.platform.match(/(iPhone|iPod|iPad)/i)?true:false;
     var type = ( isIOS ? -2 : -1 );
+    var title = document.getElementsByTagName("title")[0].innerHTML;
+    if ( title == "Solar Coaster Help" || title == "Solar Coaster" ) {
+        type = ( appearance == "dark" ? -4 : -5 );
+    }
     com_bigcatos_setJsState( appearance, darkModeHelp );
     com_bigcatos_doDarkMode( type );
     com_bigcatos_removeHelpDiv();
