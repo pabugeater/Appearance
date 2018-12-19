@@ -1,5 +1,5 @@
 
-// Appearance.html, Ver 1.fixme
+// com_bigcatos_Appearance.js, Ver 1.fixme
 //
 // BigCatOs.com light / dark appearances.
 //
