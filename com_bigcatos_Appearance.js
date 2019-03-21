@@ -181,6 +181,7 @@ function com_bigcatos_saveState ( ) {
     }
     finally {
         //Block of code to be executed regardless of the try / catch result
+        return;
     }
 
 } // end com_bigcatos_saveState

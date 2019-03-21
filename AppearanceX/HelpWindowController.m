@@ -14,6 +14,9 @@
 
 @implementation HelpWindowController
 
+- (void) keyDown: (NSEvent*) theEvent { // suppress macOS alert beep when 'a' key pressed
+} // end keyDown
+
 - (void)windowDidLoad {
     [super windowDidLoad];
     
