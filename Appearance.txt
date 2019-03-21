@@ -30,3 +30,8 @@ Build notes:
     - Force source file Appearance.m into bundle Resources folder via a custom build phase Copy Files script.
       Impossible to do this in standard Copy Bundle Resources phase.  Required for Appearance.sh.
 
+Export note:
+    Use File / Export to export Appearance files with substituted version numbers, suitable for distribution.  This essentially runs this command:
+
+    Appearance.sh srcFolder/AppearanceX.app/Contents/Resources destFolder/Appearance-2018.12.14-08.48.03 '1.3(3)' Appearance.sh Appearance.txt Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.js
+

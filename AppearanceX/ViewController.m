@@ -10,6 +10,9 @@
 
 @implementation ViewController
 
+- (void) keyDown: (NSEvent*) theEvent { // suppress macOS alert beep when 'a' key pressed
+} // end keyDown
+
 - (void) viewDidLoad {
 
     AppDelegate *delegate = [[NSApplication sharedApplication] delegate];
