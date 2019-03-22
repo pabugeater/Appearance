@@ -122,9 +122,9 @@ function com_bigcatos_doDarkMode(event) {
         com_bigcatos_colorLinks("#0098EE") ;
         var sc = document.getElementById( 'solarcoaster' );
         if ( dark == 'black' ) {
-            //sc.style.color = '#03a6f3';
-            //document.getElementById('blue1').color = '#03a6f3';
-            //document.getElementById('blue2').color = '#03a6f3';
+            sc.style.color = '#03a6f3';
+            document.getElementById('blue1').color = '#03a6f3';
+            document.getElementById('blue2').color = '#03a6f3';
         }
     } else {
         var light = ( (customType == -4 || customType == -5) ? "#03a6f3" : "white" );
@@ -135,9 +135,9 @@ function com_bigcatos_doDarkMode(event) {
         com_bigcatos_colorLinks("#0000EE");
         var sc = document.getElementById( 'solarcoaster' );
         if ( light == '#03a6f3' ) {
-            //sc.style.color = 'blue';
-            //document.getElementById('blue1').color = 'blue';
-            //document.getElementById('blue2').color = 'blue';
+            sc.style.color = 'blue';
+            document.getElementById('blue1').color = 'blue';
+            document.getElementById('blue2').color = 'blue';
         }
     }
     sessionStorage.setItem( "com_bigcatos_darkMode", darkMode ); // save current appearance
