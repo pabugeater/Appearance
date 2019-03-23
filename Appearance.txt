@@ -1,9 +1,14 @@
 
 Appearance Notes, Ver 1.fixme
 
+Add this handful of additional statements to your HTML:
+
 Head:
     <link rel="stylesheet" type="text/css" href="https://www.bigcatos.com/BigCatOs/styles/com_bigcatos_styles.css" />
     <script type="text/javascript" src="https://www.bigcatos.com/BigCatOs/js/com_bigcatos_Appearance.js"></script>
+
+Body:
+    <body class=container>
 
 Image onclick:
     onclick="com_bigcatos_doDarkMode( event )"
@@ -12,18 +17,25 @@ Inject help div:
     <div id=com_bigcatos_darkModeHelpDiv></div>
 
 Initialization:
-    <script>com_bigcatos_doDarkMode( Type );</script>
-
-        or, if using the Appearance class in an iOS or macOS App, it will do the task for you via JavaScript:
-
-    com_bigcatos_setExplicitAppearance(( "dark", "DarkModeHelpDisplayed" );
-
-        Type:
+    a) If not using the Appearance Objective-c wrapper, e.g. straight HTML page, you must initialize explicitly
+       immediately before the </body> statement:
+            <script>com_bigcatos_doDarkMode( Type );</script>
+    b) If using the Appearance class in an iOS or macOS App, initialization is done implicity on your behalf via
+       a JavaScript call similar to this:
+            com_bigcatos_setExplicitAppearance(( "dark", "DarkModeHelpDisplayed" );
+    Type:
             -1 macOS
             -2 iOS
             -3 BigCatOs star
             -4 Solar Coaster start in Dark mode
             -5 Solar Coaster start in Light mode
+
+Typical Objective-C usage:
+    #include "Appearance.h"
+    Appearance *ap;
+    ap = [[Appearance alloc] initWithFile:@"Appearance.html" contentController:self.view andFrame:self.view.bounds];
+    [self.view addSubview:ap];
+    [self addAppearanceConstraintsForView:self.view];
 
 Build notes:
     - To compile the Appearance class in macOS add "kAppearanceX=1" to the target's C Preprocessor section.
@@ -31,7 +43,8 @@ Build notes:
       Impossible to do this in standard Copy Bundle Resources phase.  Required for Appearance.sh.
 
 Export note:
-    Use File / Export to export Appearance files with substituted version numbers, suitable for distribution.  This essentially runs this command:
-
-    Appearance.sh srcFolder/AppearanceX.app/Contents/Resources destFolder/Appearance-2018.12.14-08.48.03 '1.3(3)' Appearance.sh Appearance.txt Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.js
+    Use File / Export to export Appearance files with substituted version numbers, suitable for distribution.  This
+    essentially runs the following command:
+        Appearance.sh srcFolder/AppearanceX.app/Contents/Resources destFolder/Appearance-2018.12.14-08.48.03 '1.3(3)' \
+                Appearance.sh Appearance.txt Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.js
 
