@@ -6,12 +6,17 @@
 
 #ifndef kAppearanceX
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 #endif
 #import <WebKit/WebKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
 
+#ifndef kAppearanceX
+@interface Appearance : WKWebView <WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate, MFMailComposeViewControllerDelegate>
+#else
 @interface Appearance : WKWebView <WKScriptMessageHandler, WKUIDelegate, WKNavigationDelegate>
+#endif
 
 @property( nonatomic, strong ) id contentController;
 @property( nonatomic, copy ) void(^checkJsStatus)(NSString *returnCode, NSError *error);

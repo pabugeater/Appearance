@@ -6,6 +6,37 @@
 
 #import "Appearance.h"
 
+@interface NSURL (parameterDictionaryForMailTo)
+    
+- (NSDictionary *) parameterDictionaryForMailTo;
+    
+@end
+
+@implementation NSURL (parameterDictionaryForMailTo)
+    
+- (NSDictionary *) parameterDictionaryForMailTo {
+    NSMutableDictionary *parameterDictionary = [[NSMutableDictionary alloc] init];
+    NSString *mailtoParameterString = [[self absoluteString] substringFromIndex:[@"mailto:" length]];
+    NSUInteger questionMarkLocation = [mailtoParameterString rangeOfString:@"?"].location;
+    if (questionMarkLocation != NSNotFound) {
+        [parameterDictionary setObject:[mailtoParameterString substringToIndex:questionMarkLocation] forKey:@"recipient"];
+        NSString *parameterString = [mailtoParameterString substringFromIndex:questionMarkLocation + 1];
+        NSArray *keyValuePairs = [parameterString componentsSeparatedByString:@"&"];
+        for (NSString *queryString in keyValuePairs) {
+            NSArray *keyValuePair = [queryString componentsSeparatedByString:@"="];
+            if (keyValuePair.count == 2)
+            [parameterDictionary setObject:[[keyValuePair objectAtIndex:1] stringByRemovingPercentEncoding] forKey:[[keyValuePair objectAtIndex:0] stringByRemovingPercentEncoding]];
+        }
+    }
+    else {
+        [parameterDictionary setObject:mailtoParameterString forKey:@"recipient"];
+    }
+    
+    return [parameterDictionary copy];
+}
+    
+@end
+
 @implementation Appearance
 
 - (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame {
@@ -143,5 +174,66 @@
 #endif
     
 } // end runJavaScriptAlertPanelWithMessage
+    
+#pragma mark -
+#pragma mark WKWebView and MFMailComposeViewController delegate methods for parameterDictionaryForMailTo category
+    
+#ifndef kAppearanceX
+
+- (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void  (^)(WKNavigationActionPolicy))decisionHandler {
+    
+    if ( [navigationAction.request.URL.scheme isEqualToString:@"mailto"] && [MFMailComposeViewController canSendMail] ) {
+        MFMailComposeViewController *mailController = [[MFMailComposeViewController alloc] init];
+        if ( mailController == nil ) return;
+        NSDictionary *parameterDictionary = [navigationAction.request.URL parameterDictionaryForMailTo];
+        mailController.mailComposeDelegate = self;
+        NSString *subject = [parameterDictionary objectForKey:@"subject"];
+        NSArray *recipients = [[NSArray alloc] initWithArray:[ [parameterDictionary objectForKey:@"recipient"] componentsSeparatedByString:@","]];
+        [mailController setSubject:subject];
+        [mailController setToRecipients:recipients];
+        dispatch_async(dispatch_get_main_queue(), ^ {
+            [self.contentController presentViewController:mailController animated:YES completion:nil];
+        });
+    }
+    decisionHandler( WKNavigationActionPolicyAllow );
+    
+} //end decidePolicyForNavigationAction
+    
+- (void) mailComposeController: (MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error {
+    
+    switch (result) {
+        case MFMailComposeResultCancelled: {
+            [controller dismissViewControllerAnimated:YES completion:nil];
+            break;
+        }
+        case MFMailComposeResultSaved: {
+            [controller dismissViewControllerAnimated:NO completion:nil];
+            UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Mail Saved" message:@"Message saved in your Drafts folder." preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                // Nil.
+            }];
+            [ac addAction:ok];
+            [self.contentController presentViewController:ac animated:YES completion:nil];
+           break;
+        }
+        case MFMailComposeResultSent: {
+            [controller dismissViewControllerAnimated:YES completion:nil];
+            break;
+        }
+        case MFMailComposeResultFailed: {
+            [controller dismissViewControllerAnimated:NO completion:nil];
+            UIAlertController *ac = [UIAlertController alertControllerWithTitle:@"Mail Error" message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) {
+                // Nil.
+            }];
+            [ac addAction:ok];
+            [self.contentController presentViewController:ac animated:YES completion:nil];
+            break;
+        }
+    } // end switch
+    
+} // end didFinishWithResult
+    
+#endif
 
 @end

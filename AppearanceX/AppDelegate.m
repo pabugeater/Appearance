@@ -73,7 +73,7 @@
             NSString *srcFolder = [sourcePath stringByDeletingLastPathComponent];
             NSString *escapedPath = [outURL.path stringByReplacingOccurrencesOfString:@"(" withString:@"\\("];
                       escapedPath = [escapedPath stringByReplacingOccurrencesOfString:@")" withString:@"\\)"];
-            NSString *cmd = [NSString stringWithFormat:@"%@/Appearance.sh %@ %@ '%@' %@", srcFolder, srcFolder, escapedPath, self.version, @"Appearance.sh Appearance.txt Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.js"];
+            NSString *cmd = [NSString stringWithFormat:@"%@/Appearance.sh %@ %@ '%@' %@", srcFolder, srcFolder, escapedPath, self.version, @"Appearance.sh Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.js"];
             NSInteger stat = system ( [cmd UTF8String] );
             if ( stat == 0 ) {
                 NSLog(@"Export succeeded.");
