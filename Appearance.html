@@ -32,7 +32,7 @@
 <p>Simple Light / Dark / JavaScript / HTML / Objective-C  Appearance code for iOS, macOS and Safari.
 Touch the Appearance icon to toggle the window's appearance, or type 'a'.
 
- <div id=com_bigcatos_darkModeHelpDiv></div>
+<div id=com_bigcatos_darkModeHelpDiv></div>
  
 <p><b><font size=4 color="#21adff"><a>Topics</a></font></b>
 
@@ -42,27 +42,23 @@ Touch the Appearance icon to toggle the window's appearance, or type 'a'.
 <ul>
     <li>Add this handful of additional statements to your HTML:
         <ol>
-            <p><li>Head:<br>
+            <li>Head:<br>
                 <b>&lt;link rel="stylesheet" type="text/css" href="https://www.bigcatos.com/BigCatOs/styles/com_bigcatos_styles.css" /&gt;
                 <br>&lt;script type="text/javascript" src="https://www.bigcatos.com/BigCatOs/js/com_bigcatos_Appearance.js"&gt;&lt;/script&gt;</b>
-
-            <p><li>Body:<br>
+            <li>Body:<br>
                 <b>&lt;body class=container&gt;</b>
-    
-            <p><li>Image onclick:<br>
+            <li>Image onclick:<br>
                 <b>onclick="com_bigcatos_doDarkMode( event )"</b>
-    
-            <p><li>Inject help div:<br>
+            <li>Inject help div:<br>
                 <b>&lt;div id=com_bigcatos_darkModeHelpDiv&gt;&lt;/div&gt;</b>
-    
-            <p><li>Initialization:<br>
+            <li>Initialization:<br>
                 <ul>
-                    <p><li>If not using the Appearance Objective-c wrapper, e.g. a straight HTML page, you must explicitly initialize  <i>immediately before the &lt;/body&gt; statement</i>:<br>
+                    <li>If not using the Appearance Objective-c wrapper, e.g. a straight HTML page, you must explicitly initialize  <i>immediately before the &lt;/body&gt; statement</i>:<br>
                         <b>&lt;script&gt;com_bigcatos_doDarkMode( <i>Type</i> );&lt;/script&gt;</b>
-                    <p><li>If using the Appearance class in an iOS or macOS App, initialization is done implicity on your behalf via a JavaScript call similar to this:<br>
+                    <li>If using the Appearance class in an iOS or macOS App, initialization is done implicity on your behalf via a JavaScript call similar to this:<br>
                         <b>com_bigcatos_setExplicitAppearance( "dark", "DarkModeHelpDisplayed" );</b>
                 </ul>
-                <p><i>Type</i> may be one of these integers:
+                <i>Type</i> may be one of these integers:
                     <ul>
                         <li>-1 macOS
                         <li>-2 iOS
@@ -73,28 +69,24 @@ Touch the Appearance icon to toggle the window's appearance, or type 'a'.
         </ol>
 
     <p><li>Typical Objective-C usage:<br>
-        <pre>
-#include "Appearance.h"
-
-Appearance *ap;
-ap = [[Appearance alloc] initWithFile:@"Appearance.html" contentController:self.view andFrame:self.view.bounds];
-[self.view addSubview:ap];
-[self addAppearanceConstraintsForView:self.view];
+        <pre style="display:inline; margin-top:0; ">
+    #include "Appearance.h"
+    Appearance *ap;
+    ap = [[Appearance alloc] initWithFile:@"Appearance.html" contentController:self.view andFrame:self.view.bounds];
+    [self.view addSubview:ap];
+    [self addAppearanceConstraintsForView:self.view];
         </pre>
-
-    <p><li>Build notes:<br>
+    <li>Build notes:<br>
         <ul>
             <li>To compile the Appearance class in macOS add <b>kAppearanceX=1</b> to the target's C Preprocessor section.
             <li>Force source file Appearance.m into bundle Resources folder via a custom build phase Copy Files script. It's impossible to do this in standard Copy Bundle Resources phase.  Required for Appearance.sh.
         </ul>
-
     <p><li>Export note:<br>
         Use <b>File / Export</b> to export Appearance files with substituted version numbers, suitable for distribution.  This essentially runs the following command:
-        <pre>
-Appearance.sh srcFolder/AppearanceX.app/Contents/Resources destFolder/Appearance-2018.12.14-08.48.03 '1.3(3)' \
-Appearance.sh Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.js
+        <pre display:inline; style="margin-top:0; ">
+    Appearance.sh srcFolder/AppearanceX.app/Contents/Resources destFolder/Appearance-2018.12.14-08.48.03 '1.3(3)' \
+    Appearance.sh Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.js
         </pre>
-
 </ul>
 
 <p><a href="#toc" target="_self">Topics</a>
@@ -103,12 +95,17 @@ Appearance.sh Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.
 <details>
 <summary><font size=4><a name="new">What's New?</a></font></summary>
 
+<p><b>1.8 - 2019.07.05</b>
+<ul>
+    <li>Keep logs cleaner, check for undefined elements.
+    <li>Help div timeout halved to 5 seconds.
+</ul>
+
 <p><b>1.7 - 2019.07.03</b>
 <ul>
     <li>Add support for iOS WKWebView mailto: URL, and options subject and recipient.
     <li>Appearance.txt is a bad idea, incorporate those notes directly into the HTML.
 </ul>
-
 
 <p><b>1.6 - 2019.03.23</b>
 <ul>
@@ -150,7 +147,6 @@ Appearance.sh Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.
 <ul>
     <li>Add Appearance.js and Appearance.txt.
 </ul>
-
 
 <p><a href="#toc" target="_self">Topics</a>
 </details>

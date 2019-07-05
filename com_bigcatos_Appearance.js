@@ -29,7 +29,7 @@ var customType = -1;
 
 function com_bigcatos_doDarkMode(event) {
 
-    if (event < 0 ) { // initialization
+    if ( event < 0 ) { // initialization
         customType = event;
         var block_to_insert = document.createElement( 'div' );
         if ( customType == -1 || customType == -4) {
@@ -43,7 +43,9 @@ function com_bigcatos_doDarkMode(event) {
             customType = -1;
         }
         var container_block = document.getElementById( 'com_bigcatos_darkModeHelpDiv' );
-        container_block.appendChild( block_to_insert );
+        if ( typeof( container_block ) != 'undefined' && container_block != null ) {
+            container_block.appendChild( block_to_insert );
+        }
         
         // Listen for keystrokes.
         
@@ -53,7 +55,7 @@ function com_bigcatos_doDarkMode(event) {
         // on page load, but only once. Hide Dark Mode help info after its initial showing by un-injecting the div.
         
         var darkModeHelp = sessionStorage.getItem("com_bigcatos_darkModeHelp");
-        var to = 10000;
+        var to = 5000;
         if ( darkModeHelp == "DarkModeHelpDisplayed" ) {
             to = 0;
         }
@@ -67,23 +69,26 @@ function com_bigcatos_doDarkMode(event) {
             container_block.appendChild( block_to_insert );
             return;*/
             var help = document.getElementById( 'com_bigcatos_darkModeHelpDiv' );
-            if ( to != 0 ) {
-                help.style.opacity = 1.0;
-                setTimeout(
-                           function() {
-                                help.style.opacity = 0.0;
-                                sessionStorage.setItem( "com_bigcatos_darkModeHelp", "DarkModeHelpDisplayed" );
-                                com_bigcatos_saveState(); // synch to NSUserDefaults
-                                while( help.firstChild ) {
-                                    help.removeChild( help.firstChild );
-                                }
-                            }
-                            , to );
-            } else {
-                while( help.firstChild ) {
-                    help.removeChild( help.firstChild );
-                }
-            }
+            if ( typeof( help ) != 'undefined' && help != null ) {
+                function removeHelp ( help ) {
+                    while( help.firstChild ) {
+                        help.removeChild( help.firstChild );
+                    }
+                } // end remove_help
+                if ( to != 0 ) {
+                    help.style.opacity = 1.0;
+                    setTimeout(
+                        function() {
+                            help.style.opacity = 0.0;
+                            sessionStorage.setItem( "com_bigcatos_darkModeHelp", "DarkModeHelpDisplayed" );
+                            com_bigcatos_saveState(); // synch to NSUserDefaults
+                            removeHelp( help );
+                        }
+                    , to );
+                } else {
+                    removeHelp( help );
+                } // ifend timeout != 0
+            } // ifend help div is defined
         } // end onload
         
         if ( customType == -4 ) { // Solar Coaster starts with dark appearance, most of the time
