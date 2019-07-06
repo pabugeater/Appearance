@@ -17,7 +17,7 @@
     NSString *appVersion = (NSString *)[infoPlist objectForKey:@"CFBundleShortVersionString"];
     NSString *appBuild = (NSString *)[infoPlist objectForKey:@"CFBundleVersion"];
     self.version = [NSString stringWithFormat:@"%@(%@)", appVersion, appBuild];
-    NSLog(@"### Appearance version %@, macOSMode=%@.", self.version, self.macOSMode);
+    NSLog(@"### AppearanceX version %@, macOSMode=%@.", self.version, self.macOSMode);
     
 }
 
@@ -73,7 +73,7 @@
             NSString *srcFolder = [sourcePath stringByDeletingLastPathComponent];
             NSString *escapedPath = [outURL.path stringByReplacingOccurrencesOfString:@"(" withString:@"\\("];
                       escapedPath = [escapedPath stringByReplacingOccurrencesOfString:@")" withString:@"\\)"];
-            NSString *cmd = [NSString stringWithFormat:@"%@/Appearance.sh %@ %@ '%@' %@", srcFolder, srcFolder, escapedPath, self.version, @"Appearance.sh Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.js"];
+            NSString *cmd = [NSString stringWithFormat:@"FIX_APPEARANCE_HTML=YES %@/Appearance.sh %@ %@ '%@' %@", srcFolder, srcFolder, escapedPath, self.version, @"Appearance.sh Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.js"];
             NSInteger stat = system ( [cmd UTF8String] );
             if ( stat == 0 ) {
                 NSLog(@"Export succeeded.");

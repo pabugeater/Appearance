@@ -287,7 +287,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\n${SRCROOT}/Appearance.sh ${SRCROOT} ${TARGET_BUILD_DIR}/Appearance.app \"$vn ($bn)\" Appearance.html\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nFIX_APPEARANCE_HTML=NO ${SRCROOT}/Appearance.sh ${SRCROOT} ${TARGET_BUILD_DIR}/Appearance.app \"$vn ($bn)\" Appearance.html\n";
 		};
 		7696327422D0033300D3DC07 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -304,7 +304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\n${SRCROOT}/Appearance.sh ${SRCROOT} ${TARGET_BUILD_DIR}/AppearanceX.app/Contents/Resources \"$vn ($bn)\" Appearance.html\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nFIX_APPEARANCE_HTML=NO ${SRCROOT}/Appearance.sh ${SRCROOT} ${TARGET_BUILD_DIR}/AppearanceX.app/Contents/Resources \"$vn ($bn)\" Appearance.html\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
