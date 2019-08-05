@@ -51,7 +51,7 @@ function com_bigcatos_doDarkMode(event) {
         
         document.body.addEventListener( 'keydown',  com_bigcatos_doDarkMode, false );
         
-        // Setup Help to toggle Dark Mode and instruct the user. Initially opacity = 0, set to one for 10 seconds
+        // Setup Help to toggle Dark Mode and instruct the user. Initially display = none, set to block for 5 seconds
         // on page load, but only once. Hide Dark Mode help info after its initial showing by un-injecting the div.
         
         var darkModeHelp = localStorage.getItem("com_bigcatos_darkModeHelp");
@@ -76,10 +76,10 @@ function com_bigcatos_doDarkMode(event) {
                     }
                 } // end remove_help
                 if ( to != 0 ) {
-                    help.style.opacity = 1.0;
+                    help.style.display = "block";
                     setTimeout(
                         function() {
-                            help.style.opacity = 0.0;
+                            help.style.display = "none";
                             localStorage.setItem( "com_bigcatos_darkModeHelp", "DarkModeHelpDisplayed" );
                             com_bigcatos_saveState(); // synch to NSUserDefaults
                             removeHelp( help );
