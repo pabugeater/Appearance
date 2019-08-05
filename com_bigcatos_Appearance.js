@@ -54,7 +54,7 @@ function com_bigcatos_doDarkMode(event) {
         // Setup Help to toggle Dark Mode and instruct the user. Initially opacity = 0, set to one for 10 seconds
         // on page load, but only once. Hide Dark Mode help info after its initial showing by un-injecting the div.
         
-        var darkModeHelp = sessionStorage.getItem("com_bigcatos_darkModeHelp");
+        var darkModeHelp = localStorage.getItem("com_bigcatos_darkModeHelp");
         var to = 5000;
         if ( darkModeHelp == "DarkModeHelpDisplayed" ) {
             to = 0;
@@ -80,7 +80,7 @@ function com_bigcatos_doDarkMode(event) {
                     setTimeout(
                         function() {
                             help.style.opacity = 0.0;
-                            sessionStorage.setItem( "com_bigcatos_darkModeHelp", "DarkModeHelpDisplayed" );
+                            localStorage.setItem( "com_bigcatos_darkModeHelp", "DarkModeHelpDisplayed" );
                             com_bigcatos_saveState(); // synch to NSUserDefaults
                             removeHelp( help );
                         }
@@ -92,13 +92,13 @@ function com_bigcatos_doDarkMode(event) {
         } // end onload
         
         if ( customType == -4 ) { // Solar Coaster starts with dark appearance, most of the time
-            sessionStorage.setItem( "com_bigcatos_darkMode", 'dark' ); // save current appearance
+            localStorage.setItem( "com_bigcatos_darkMode", 'dark' ); // save current appearance
         }
     } // ifend initialization
 
     // Toggle appearance, possibly.
     
-    var darkMode = sessionStorage.getItem("com_bigcatos_darkMode"); // current appearance
+    var darkMode = localStorage.getItem("com_bigcatos_darkMode"); // current appearance
     if ( event != -1 && event != -2 && event != -3 && event != -4 && event != -5 ) {
         var type = event.type
         if ( type == 'keydown' ) {
@@ -145,7 +145,7 @@ function com_bigcatos_doDarkMode(event) {
             document.getElementById('blue2').color = 'blue';
         }
     }
-    sessionStorage.setItem( "com_bigcatos_darkMode", darkMode ); // save current appearance
+    localStorage.setItem( "com_bigcatos_darkMode", darkMode ); // save current appearance
     com_bigcatos_saveState(); // synch to NSUserDefaults
 
 } // end com_bigcatos_doDarkMode
@@ -165,8 +165,8 @@ function com_bigcatos_getJsState () {
     
     // Return state of com_bigcatos_darkMode and com_bigcatos_darkModeHelp.
     
-    var darkMode = sessionStorage.getItem("com_bigcatos_darkMode");
-    var darkModeHelp = sessionStorage.getItem("com_bigcatos_darkModeHelp");
+    var darkMode = localStorage.getItem("com_bigcatos_darkMode");
+    var darkModeHelp = localStorage.getItem("com_bigcatos_darkModeHelp");
     return darkMode + '|' + darkModeHelp;
     
 } // end com_bigcatos_getJsState
@@ -210,7 +210,7 @@ function com_bigcatos_setJsState ( darkMode, darkModeHelp ) {
     
     // Initialize session storage for doDarkMode().
     
-    sessionStorage.setItem( "com_bigcatos_darkMode", darkMode );
-    sessionStorage.setItem( "com_bigcatos_darkModeHelp", darkModeHelp);
+    localStorage.setItem( "com_bigcatos_darkMode", darkMode );
+    localStorage.setItem( "com_bigcatos_darkModeHelp", darkModeHelp);
     
 } // end com_bigcatos_setJsState
