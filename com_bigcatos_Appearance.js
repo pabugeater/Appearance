@@ -118,6 +118,10 @@ function com_bigcatos_doDarkMode(event) {
     
     var x = document.getElementsByClassName("container");
     var element = x[0];
+    var transitionStyle = 'linear';
+    var transition = "background 500ms " + transitionStyle + ", backgroundColor 500ms " + transitionStyle;
+    element.style["transition"] = transition;
+    document.body.style["transition"] = transition;
     if ( darkMode == "dark" ) {
         var dark = ( (customType == -4 || customType == -5) ? 'black' : "#404040" );
         element.style["background"] = dark;
@@ -127,6 +131,7 @@ function com_bigcatos_doDarkMode(event) {
         com_bigcatos_colorLinks("#0098EE") ;
         var sc = document.getElementById( 'solarcoaster' );
         if ( dark == 'black' ) {
+            sc.style["transition"] = transition;
             sc.style.color = '#03a6f3';
             document.getElementById('blue1').color = '#03a6f3';
             document.getElementById('blue2').color = '#03a6f3';
@@ -140,6 +145,7 @@ function com_bigcatos_doDarkMode(event) {
         com_bigcatos_colorLinks("#0000EE");
         var sc = document.getElementById( 'solarcoaster' );
         if ( light == '#03a6f3' ) {
+            sc.style["transition"] = transition;
             sc.style.color = 'blue';
             document.getElementById('blue1').color = 'blue';
             document.getElementById('blue2').color = 'blue';
