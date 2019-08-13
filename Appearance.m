@@ -66,7 +66,6 @@
         self.navigationDelegate = self;
         self.contentController = contentController; // UIViewController or NSWindow (from NSWindowController or NSView)
         self.translatesAutoresizingMaskIntoConstraints = NO;
-        [self loadFileURL:[NSURL fileURLWithPath:path2HTML] allowingReadAccessToURL:baseURL];
         if (@available(iOS 9.0, *)) {
             [self loadFileURL:[NSURL fileURLWithPath:path2HTML] allowingReadAccessToURL:baseURL];
         } else {
