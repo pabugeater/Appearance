@@ -45,6 +45,18 @@
     WKPreferences *pref = [[WKPreferences alloc] init];
     pref.javaScriptEnabled = YES;
     configuration.preferences = pref;
+#ifdef kAppearanceX
+    if ( @available(macOS 12.0, *) ) {
+        configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
+    }
+#else
+    if ( @available(iOS 10.0, *) ) {
+        configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
+    }
+#endif
+#ifndef kAppearanceX
+    configuration.allowsInlineMediaPlayback = YES;
+#endif
     [configuration.userContentController addScriptMessageHandler:self name:@"doAppearanceAction"];
     if ( self = [super initWithFrame:frame configuration:configuration] ) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);

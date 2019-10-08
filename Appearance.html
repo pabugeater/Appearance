@@ -33,7 +33,10 @@
 Touch the Appearance icon to toggle the window's appearance, or type 'a'.
 
 <div id=com_bigcatos_darkModeHelpDiv style="display:none; "></div>
- 
+
+This inline video element should autoplay and shred, silently:
+<p><video autoplay loop muted playsinline  width='64' height='64' style='border-radius: 10%; ' > <source src='Shredder.mov'> </video>
+
 <p><b><font size=4 color="#21adff"><a>Topics</a></font></b>
 
 <details>
@@ -74,7 +77,7 @@ Touch the Appearance icon to toggle the window's appearance, or type 'a'.
     Appearance *ap;
     ap = [[Appearance alloc] initWithFile:@"Appearance.html" contentController:self.view andFrame:self.view.bounds];
     [self.view addSubview:ap];
-    [self addAppearanceConstraintsForView:self.view];
+    [ap addAppearanceConstraintsForView:self.view];
         </pre>
     <li>Build notes:<br>
         <ul>
@@ -94,6 +97,12 @@ Touch the Appearance icon to toggle the window's appearance, or type 'a'.
 
 <details>
 <summary><font size=4><a name="new">What's New?</a></font></summary>
+
+<p><b>2.5 - 2019.10.07</b>
+<ul>
+    <li>Explicitly configure WKWebView to allow inline autoplay videos for macOS and iOS.
+    <li>Update for macOS 10.15 and iOS 13.1.2.
+</ul>
 
 <p><b>2.4 - 2019.08.13</b>
 <ul>
