@@ -33,7 +33,7 @@ function com_bigcatos_doDarkMode(event) {
         customType = event;
         var block_to_insert = document.createElement( 'div' );
         if ( customType == -1 || customType == -4) {
-            block_to_insert.innerHTML = '<p>&nbsp<center><span style=" border: 4px solid #EA98EE; border-radius: 10px; padding-left:20px; padding-right:20px; padding-top:10px; padding-bottom:10px;  ">Click App icon or type <b><i>a</i></b> to toggle <b>Light / Dark</b> appearance</span></center> <p>&nbsp' ;
+            block_to_insert.innerHTML = '<p>&nbsp<center><span style=" border: 4px solid #EA98EE; border-radius: 10px; padding-left:20px; padding-right:20px; padding-top:10px; padding-bottom:10px;  ">Click App icon to toggle <b>Light / Dark</b> appearance</span></center> <p>&nbsp' ;
         } else if ( customType == -2 || customType == -5 ) {
             block_to_insert.innerHTML = '<p>&nbsp<center><div style=" border: 2px solid #EA98EE; border-radius: 10px; padding-left:2px; padding-right:2px; padding-top:2px; padding-bottom:2px;  ">Touch App icon to toggle<br><b>Light / Dark</b> appearance</div></center> <p>&nbsp' ;
         } else if ( customType == -3 ) {
