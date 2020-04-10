@@ -210,7 +210,7 @@
 		766645FE21BD786C00DB519B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1010;
+				LastUpgradeCheck = 1140;
 				ORGANIZATIONNAME = "Steve Lidie";
 				TargetAttributes = {
 					7666460521BD786C00DB519B = {
@@ -527,6 +527,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6VN54MV749;
+				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
 					"kAppearanceX=1",
@@ -552,6 +553,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6VN54MV749;
+				ENABLE_HARDENED_RUNTIME = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/AppearanceX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
