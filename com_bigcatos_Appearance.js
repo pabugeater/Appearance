@@ -37,7 +37,7 @@ function com_bigcatos_doDarkMode(event) {
         } else if ( customType == -2 || customType == -5 ) {
             block_to_insert.innerHTML = '<p>&nbsp<center><div style=" border: 2px solid #EA98EE; border-radius: 10px; padding-left:2px; padding-right:2px; padding-top:2px; padding-bottom:2px;  ">Touch App icon to toggle<br><b>Light / Dark</b> appearance</div></center> <p>&nbsp' ;
         } else if ( customType == -3 ) {
-            block_to_insert.innerHTML = '<p>&nbsp<center><div style=" border: 2px solid #EA98EE; border-radius: 10px; padding-left:2px; padding-right:2px; padding-top:2px; padding-bottom:2px;  ">Touch Star or type <b><i>a</i></b><br>to toggle<br><b>Light / Dark</b> appearance</div></center> <p>&nbsp' ;
+            block_to_insert.innerHTML = '<p>&nbsp<center><div style=" border: 2px solid #EA98EE; border-radius: 10px; padding-left:2px; padding-right:2px; padding-top:2px; padding-bottom:2px;  ">Touch Star to toggle <b>Light / Dark</b> appearance</div></center> <p>&nbsp' ;
         } else {
             block_to_insert.innerHTML = '<p>&nbsp<center><span style=" border: 2px solid #EA98EE; border-radius: 10px; padding-left:2px; padding-right:2px; padding-top:2px; padding-bottom:2px;  ">Unknown App Type=' + customType + '</span></center> <p>&nbsp' ;
             customType = -1;
