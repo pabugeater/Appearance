@@ -17,7 +17,16 @@
     NSString *appVersion = (NSString *)[infoPlist objectForKey:@"CFBundleShortVersionString"];
     NSString *appBuild = (NSString *)[infoPlist objectForKey:@"CFBundleVersion"];
     self.version = [NSString stringWithFormat:@"%@(%@)", appVersion, appBuild];
-    NSLog(@"### AppearanceX version %@, macOSMode=%@.", self.version, self.macOSMode);
+    NSLog(@"### AppearanceX version %@.", self.version);
+    NSMenu *rootMenu = [NSApp mainMenu];
+    NSMenuItem *mi = [rootMenu itemWithTitle:@"AppearanceX"];
+    NSMenu *subMenu = [mi submenu];
+    [subMenu removeItemAtIndex:2]; // remove Preferences...
+    mi = [rootMenu itemWithTitle:@"File"];
+    subMenu = [mi submenu];
+    [subMenu removeItemAtIndex:2]; // remove Print
+    [subMenu removeItemAtIndex:2]; // remover Page Setup
+    [rootMenu removeItemAtIndex:2]; // remove Edit
     
 }
 

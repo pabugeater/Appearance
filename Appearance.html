@@ -6,9 +6,39 @@
 		<meta name="AppleTitle" content="Appearance Help"></meta>
         <meta name="viewport" content="initial-scale=1.0" />
 		<title>Appearance Help</title>
-        <link rel="stylesheet" type="text/css" href="https://www.bigcatos.com/BigCatOs/styles/com_bigcatos_styles.css" />
+    <!--     <link rel="stylesheet" type="text/css" href="https://www.bigcatos.com/BigCatOs/styles/com_bigcatos_styles.css" /> -->
         <script type="text/javascript" src="com_bigcatos_Appearance.js"></script>
-	</head>
+        <style type="text/css">
+            body {
+                font-family:'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', LiberationSans, sans-serif;
+                max-width:700px;
+                margin:0px auto;
+                padding:8px;
+            }
+            body {
+                background-color: white;
+                color: black;
+            }
+            a:link {
+                color:#0000EE;
+                
+            }
+            @media screen and (prefers-color-scheme: dark) {
+                body {
+                    background-color: #404040;
+                    color: white;
+                }
+                a:link {
+                    color:#0098EE;
+                    
+                }
+            }
+        </style>
+    
+    
+    </head>
+    
+    
     <body class=container style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', LiberationSans, sans-serif; max-width:700px; margin:0px auto; padding:8px; ">
 
 	<div>
@@ -31,8 +61,6 @@
 <p>Simple Light / Dark / JavaScript / HTML / Objective-C  Appearance code for iOS, macOS and Safari.
 Touch the Appearance icon to toggle the window's appearance.
 
-<div id=com_bigcatos_darkModeHelpDiv style="display:none; "></div>
-
 This inline video element should autoplay and shred, silently:
 <p>
 <video poster="ShredderIcon@3x.png" autoplay loop muted playsinline  width='64' height='64' style='border-radius: 10%; ' >
@@ -40,7 +68,7 @@ This inline video element should autoplay and shred, silently:
     <img src="ShredderIcon@3x.png" title="Your browser does not support the mp4 movie format">
 </video>
 
-<p><b><font size=4 color="#21adff"><a>Topics</a></font></b>
+<p><b><font size=4 color="#21adff">Topics</font></b>
 
 <details>
 <summary><font size=4><a name="intro">Usage</a></font></summary>
@@ -55,14 +83,12 @@ This inline video element should autoplay and shred, silently:
                 <b>&lt;body class=container&gt;</b>
             <li>Image onclick:<br>
                 <b>onclick="com_bigcatos_doDarkMode( event )"</b>
-            <li>Inject help div:<br>
-                <b>&lt;div id=com_bigcatos_darkModeHelpDiv style="display:none; "&gt;&lt;/div&gt;</b>
             <li>Initialization:<br>
                 <ul>
                     <li>If not using the Appearance Objective-c wrapper, e.g. a straight HTML page, you must explicitly initialize  <i>immediately before the &lt;/body&gt; statement</i>:<br>
                         <b>&lt;script&gt;com_bigcatos_doDarkMode( <i>Type</i> );&lt;/script&gt;</b>
                     <li>If using the Appearance class in an iOS or macOS App, initialization is done implicity on your behalf via a JavaScript call similar to this:<br>
-                        <b>com_bigcatos_setExplicitAppearance( "dark", "DarkModeHelpDisplayed" );</b>
+                        <b>com_bigcatos_setExplicitAppearance( "dark" );</b>
                 </ul>
                 <i>Type</i> may be one of these integers:
                     <ul>
@@ -101,8 +127,12 @@ This inline video element should autoplay and shred, silently:
 <details>
 <summary><font size=4><a name="new">What's New?</a></font></summary>
 
-<p><b>2.6.1 - 2020.05.01</b>
+<p><b>3.0 - 2020.05.01</b>
 <ul>
+    <li>Use CSS styling now, but keep old Appearance code active for pre-Appearance environments.
+    <li>Because Appearance configures WkWebView just how I want it, will be renamed in the future.
+    <li>Duh: handle OS appearance changes ourself, instead of the view controllers.
+    <li>Do not show a Help div anymore, we do all the work automatically.
     <li>Style page width: max-width:700px; margin:0px auto; padding:8px;
     <li>Conform with Apple's 2020.06.30 App Store guidelines.
     <li>Update for iOS 13.4.1 and macOS 10.15.4.
@@ -205,8 +235,7 @@ This inline video element should autoplay and shred, silently:
 <b><font size=4 color="#21adff"><a name="support">Support</a></font></b>
 <p><p style="line-height:14.4px;text-align:center;margin-bottom:0px;margin-top:0px;font-size:10px;">Copyright (&copy) 2018 - 2020 BigCatOs. All rights reserved.&nbsp;&nbsp; | &nbsp;&nbsp;<a href="mailto:support@bigcatos.com?subject=Appearance 1.fixme, Comment / Question">Contact</a></p>
 
-<p><a href="#toc" target="_self">Topics</a>
-
+<p><a class="one" href="#toc" target="_self">Topics</a>
 <!-- -->
 <!-- -->
 

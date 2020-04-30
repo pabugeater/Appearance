@@ -12,7 +12,6 @@
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
-@property (nonatomic, strong) NSString *macOSMode;
 @property (nonatomic, strong) NSString *version;
 @property (nonatomic, strong) HelpWindowController *hwc;
 @property (nonatomic, strong) Appearance *ap;

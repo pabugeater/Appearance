@@ -97,25 +97,7 @@
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
     
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *darkMode;
-#ifdef kAppearanceX
-    if (@available(macOS 10.14, *)) {
-        darkMode = [NSApplication sharedApplication].effectiveAppearance.name;
-        darkMode = ( darkMode == NSAppearanceNameDarkAqua ? @"dark" : @"" );
-        [defaults setObject:darkMode forKey:@"darkMode"];
-    } else {
-        darkMode = [defaults objectForKey:@"darkMode"];
-        if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
-    }
-#else
-    darkMode = [defaults objectForKey:@"darkMode"];
-    if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
-#endif
-    NSString *darkModeHelp = [defaults objectForKey:@"darkModeHelp"];
-    if ( ! darkModeHelp || [darkModeHelp length] == 0 || [darkModeHelp isEqualToString:@"null"]|| [darkModeHelp isEqualToString:@"undefined"] ) darkModeHelp = @"darkModeHelpNotDisplayed";
-    NSString *js = [NSString stringWithFormat:@"com_bigcatos_setExplicitAppearance( \"%@\", \"%@\" ); ", darkMode, darkModeHelp];
-    [self evaluateJavaScript:js completionHandler:self.checkJsStatus];
+    [self updateWebViewAppearance];
     
 } // end didFinishNavigation
 
@@ -150,15 +132,11 @@
         if ( error ) {
             NSLog(@"getJsState :  rc=%@, error=%@", rc, error);
         }
-        NSString *darkMode, *darkModeHelp;
-        NSArray *toks = [rc componentsSeparatedByString:@"|"];
-        darkMode = toks[0];
-        darkModeHelp = toks[1];
+        NSString *darkMode;
+        darkMode = rc;
         if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
-        if ( ! darkModeHelp || [darkModeHelp length] == 0 || [darkModeHelp isEqualToString:@"null"] ) darkModeHelp = @"darkModeHelpNotDisplayed";
         NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
         [defaults setObject:darkMode forKey:@"darkMode"];
-        [defaults setObject:darkModeHelp forKey:@"darkModeHelp"];
         [defaults synchronize];
     };
     
@@ -250,6 +228,52 @@
     
 } // end didFinishWithResult
     
+#endif
+
+#pragma mark - appearance change methods
+
+- (void) updateWebViewAppearance {
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    NSString *darkMode;
+#ifdef kAppearanceX
+    if (@available(macOS 10.14, *)) {
+        darkMode = [NSApplication sharedApplication].effectiveAppearance.name;
+        darkMode = ( darkMode == NSAppearanceNameDarkAqua ? @"dark" : @"" );
+    } else {
+        darkMode = [defaults objectForKey:@"darkMode"];
+        if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
+    }
+#else
+    if (@available(iOS 12.0, *)) {
+        darkMode = @"";
+        if ( self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark ) darkMode = @"dark";
+    } else {
+        darkMode = [defaults objectForKey:@"darkMode"];
+        if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
+    }
+#endif
+    [defaults setObject:darkMode forKey:@"darkMode"];
+    
+    NSString *js = [NSString stringWithFormat:@"com_bigcatos_setExplicitAppearance( \"%@\" ); ", darkMode];
+    [self evaluateJavaScript:js completionHandler:self.checkJsStatus];
+
+} // end updateWebViewAppearance
+
+#ifndef kAppearanceX
+- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
+    
+    [super traitCollectionDidChange:previousTraitCollection];
+    [self updateWebViewAppearance];
+    
+} // end traitCollectionDidChange
+#else
+- (void) viewDidChangeEffectiveAppearance {
+
+    [super viewDidChangeEffectiveAppearance];
+    [self updateWebViewAppearance];
+
+} // end viewDidChangeEffectiveAppearance
 #endif
 
 @end
