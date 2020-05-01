@@ -1,5 +1,3 @@
-# Appearance
-Implement BigCatOs Appearances
+# BCOWebView
 
-Works for the EverWeb web pages (HTML only) and Help HTML embedded in BigCatOs Objective-C Apps.
-
+# Configures WkWebView instances for BigCatOs.
