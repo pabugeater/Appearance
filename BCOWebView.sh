@@ -1,12 +1,12 @@
 #!/bin/bash
 
-#  Appearance.bash, Ver 1.fixme
+#  BCOWebView.bash, Ver 1.fixme
 #
 #  Created by Steve Lidie on 12/12/18.
 #  Copyright © 2018 Steve Lidie. All rights reserved.
 
 if [ $# -lt 4 ]; then
-echo "Usage: Appearance.sh srcFolder destFolder version file1 ... "
+echo "Usage: BCOwebView.sh srcFolder destFolder version file1 ... "
     exit 1
 fi
 
@@ -20,10 +20,10 @@ shift
 for f in $*; do
     echo Exporting $src/$f '-->' $dest/$f '...'
     /usr/bin/perl -ne "s/1\.fixme/$v/; print" $src/$f > $dest/$f
-    if [ $f = "Appearance.html" ] && [ $FIX_APPEARANCE_HTML = "YES" ] ; then
-        out="Appearance.newHTML"
-        echo Fixup Appearance.html to get com_bigcatos_Appearance.js from BigCatOs.com ...
-        /usr/bin/perl -pe 's/src=\"com_bigcatos_Appearance.js\"/src=\"https:\/\/www\.bigcatos\.com\/BigCatOs\/js\/com_bigcatos_Appearance\.js\"/' $dest/$f > $dest/$out
+    if [ $f = "BCOwebView.html" ] && [ $FIX_BCOWEBVIEW_HTML = "YES" ] ; then
+        out="BCOwebView.newHTML"
+        echo Fixup BCOwebView.html to get BCOwebView.js from BigCatOs.com ...
+        /usr/bin/perl -pe 's/src=\"BCOwebView.js\"/src=\"https:\/\/www\.bigcatos\.com\/BigCatOs\/js\/BCOwebView\.js\"/' $dest/$f > $dest/$out
         if [ $? = 0 ] ; then
             mv $dest/$out $dest/$f
             echo Fixup complete

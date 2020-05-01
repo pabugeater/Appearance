@@ -1,17 +1,17 @@
 //
 //  ViewController.h
-//  Appearance
+//  BCOWebView
 //
 //  Created by Steve Lidie on 12/9/18.
 //  Copyright © 2018 Steve Lidie. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
-#import "Appearance.h"
+#import "BCOWebView.h"
 
 @interface ViewController : UIViewController
 
-@property (nonatomic, retain ) Appearance *ap;
+@property (nonatomic, retain ) BCOWebView *bwv;
 
 @end
 

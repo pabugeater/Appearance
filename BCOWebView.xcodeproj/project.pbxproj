@@ -7,34 +7,35 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7602448C21C86D1700DD3518 /* AppearanceIcon-1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 7602448921C86D1700DD3518 /* AppearanceIcon-1024x1024.png */; };
+		7654949D245C224D00561E01 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 7654949C245C224D00561E01 /* Credits.html */; };
 		7666460B21BD786C00DB519B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666460A21BD786C00DB519B /* AppDelegate.m */; };
 		7666460E21BD786C00DB519B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666460D21BD786C00DB519B /* ViewController.m */; };
 		7666461121BD786C00DB519B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7666460F21BD786C00DB519B /* Main.storyboard */; };
 		7666461621BD786E00DB519B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7666461421BD786E00DB519B /* LaunchScreen.storyboard */; };
 		7666461921BD786E00DB519B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666461821BD786E00DB519B /* main.m */; };
-		7666462321BD78C000DB519B /* Appearance.html in Resources */ = {isa = PBXBuildFile; fileRef = 7666462021BD78C000DB519B /* Appearance.html */; };
-		7666462521BD78C000DB519B /* com_bigcatos_Appearance.js in Resources */ = {isa = PBXBuildFile; fileRef = 7666462221BD78C000DB519B /* com_bigcatos_Appearance.js */; };
-		7666462821BD799B00DB519B /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* Appearance.m */; };
-		7666462C21BD857F00DB519B /* AppearanceIcon-256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */; };
+		7666462321BD78C000DB519B /* BCOWebView.html in Resources */ = {isa = PBXBuildFile; fileRef = 7666462021BD78C000DB519B /* BCOWebView.html */; };
+		7666462521BD78C000DB519B /* BCOWebView.js in Resources */ = {isa = PBXBuildFile; fileRef = 7666462221BD78C000DB519B /* BCOWebView.js */; };
+		7666462821BD799B00DB519B /* BCOWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* BCOWebView.m */; };
+		7666462C21BD857F00DB519B /* BCOWebViewIcon-256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7666462B21BD857F00DB519B /* BCOWebViewIcon-256x256.png */; };
 		7666463521BDA1AF00DB519B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666463421BDA1AF00DB519B /* AppDelegate.m */; };
 		7666463821BDA1AF00DB519B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666463721BDA1AF00DB519B /* ViewController.m */; };
 		7666463D21BDA1B000DB519B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7666463B21BDA1B000DB519B /* Main.storyboard */; };
 		7666464021BDA1B000DB519B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666463F21BDA1B000DB519B /* main.m */; };
-		7666464521BDA60A00DB519B /* Appearance.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* Appearance.m */; };
-		7666464621BDAB6400DB519B /* Appearance.html in Resources */ = {isa = PBXBuildFile; fileRef = 7666462021BD78C000DB519B /* Appearance.html */; };
+		7666464521BDA60A00DB519B /* BCOWebView.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* BCOWebView.m */; };
+		7666464621BDAB6400DB519B /* BCOWebView.html in Resources */ = {isa = PBXBuildFile; fileRef = 7666462021BD78C000DB519B /* BCOWebView.html */; };
 		7668130921C8721400E5D2E5 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7668130821C8721400E5D2E5 /* Images.xcassets */; };
 		766B4E6C21C87BF4003F3CB0 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7668130821C8721400E5D2E5 /* Images.xcassets */; };
 		76A05D6E2348CCD3000093BD /* Shredder.mov in Resources */ = {isa = PBXBuildFile; fileRef = 76A05D6D2348CCD3000093BD /* Shredder.mov */; };
-		76BD946221C364F100EF30E6 /* Appearance.h in Resources */ = {isa = PBXBuildFile; fileRef = 7666462721BD799A00DB519B /* Appearance.h */; };
-		76BD946621C36CF400EF30E6 /* Appearance.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* Appearance.m */; };
+		76BD946221C364F100EF30E6 /* BCOWebView.h in Resources */ = {isa = PBXBuildFile; fileRef = 7666462721BD799A00DB519B /* BCOWebView.h */; };
+		76BD946621C36CF400EF30E6 /* BCOWebView.m in CopyFiles */ = {isa = PBXBuildFile; fileRef = 7666462621BD799A00DB519B /* BCOWebView.m */; };
 		76C9F38A21BFE2BE008B06D8 /* HelpWindowController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 76C9F38721BFE2BE008B06D8 /* HelpWindowController.xib */; };
 		76C9F38B21BFE2BE008B06D8 /* HelpWindowController.m in Sources */ = {isa = PBXBuildFile; fileRef = 76C9F38821BFE2BE008B06D8 /* HelpWindowController.m */; };
 		76DF515B234C090B00304E1A /* Shredder.mov in Resources */ = {isa = PBXBuildFile; fileRef = 76A05D6D2348CCD3000093BD /* Shredder.mov */; };
-		76E4BC8021C1E9D4008A7ECD /* Appearance.sh in Resources */ = {isa = PBXBuildFile; fileRef = 76E4BC7F21C1E9D4008A7ECD /* Appearance.sh */; };
-		76E4BC8121C1E9D4008A7ECD /* Appearance.sh in Resources */ = {isa = PBXBuildFile; fileRef = 76E4BC7F21C1E9D4008A7ECD /* Appearance.sh */; };
-		76E54CC821BDC3720077F48D /* AppearanceIcon-256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */; };
-		76E54CC921BDC40D0077F48D /* com_bigcatos_Appearance.js in Resources */ = {isa = PBXBuildFile; fileRef = 7666462221BD78C000DB519B /* com_bigcatos_Appearance.js */; };
+		76E4BC8021C1E9D4008A7ECD /* BCOWebView.sh in Resources */ = {isa = PBXBuildFile; fileRef = 76E4BC7F21C1E9D4008A7ECD /* BCOWebView.sh */; };
+		76E4BC8121C1E9D4008A7ECD /* BCOWebView.sh in Resources */ = {isa = PBXBuildFile; fileRef = 76E4BC7F21C1E9D4008A7ECD /* BCOWebView.sh */; };
+		76E54CC821BDC3720077F48D /* BCOWebViewIcon-256x256.png in Resources */ = {isa = PBXBuildFile; fileRef = 7666462B21BD857F00DB519B /* BCOWebViewIcon-256x256.png */; };
+		76E54CC921BDC40D0077F48D /* BCOWebView.js in Resources */ = {isa = PBXBuildFile; fileRef = 7666462221BD78C000DB519B /* BCOWebView.js */; };
+		76E6CCF2245B1C5B00B5BE8B /* BCOWebViewIcon-1024x1024.png in Resources */ = {isa = PBXBuildFile; fileRef = 76E6CCF1245B1C5A00B5BE8B /* BCOWebViewIcon-1024x1024.png */; };
 		76F03338243FE2D70085B442 /* ShredderIcon@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 76F03337243FE2D70085B442 /* ShredderIcon@3x.png */; };
 /* End PBXBuildFile section */
 
@@ -45,15 +46,15 @@
 			dstPath = "";
 			dstSubfolderSpec = 7;
 			files = (
-				76BD946621C36CF400EF30E6 /* Appearance.m in CopyFiles */,
+				76BD946621C36CF400EF30E6 /* BCOWebView.m in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		7602448921C86D1700DD3518 /* AppearanceIcon-1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppearanceIcon-1024x1024.png"; sourceTree = "<group>"; };
-		7666460621BD786C00DB519B /* Appearance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Appearance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7654949C245C224D00561E01 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
+		7666460621BD786C00DB519B /* BCOWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCOWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7666460921BD786C00DB519B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7666460A21BD786C00DB519B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7666460C21BD786C00DB519B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -62,12 +63,12 @@
 		7666461521BD786E00DB519B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7666461721BD786E00DB519B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7666461821BD786E00DB519B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7666462021BD78C000DB519B /* Appearance.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Appearance.html; sourceTree = "<group>"; };
-		7666462221BD78C000DB519B /* com_bigcatos_Appearance.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = com_bigcatos_Appearance.js; sourceTree = "<group>"; };
-		7666462621BD799A00DB519B /* Appearance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appearance.m; sourceTree = "<group>"; };
-		7666462721BD799A00DB519B /* Appearance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appearance.h; sourceTree = "<group>"; };
-		7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "AppearanceIcon-256x256.png"; sourceTree = "<group>"; };
-		7666463121BDA1AF00DB519B /* AppearanceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppearanceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7666462021BD78C000DB519B /* BCOWebView.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = BCOWebView.html; sourceTree = "<group>"; };
+		7666462221BD78C000DB519B /* BCOWebView.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; path = BCOWebView.js; sourceTree = "<group>"; };
+		7666462621BD799A00DB519B /* BCOWebView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BCOWebView.m; sourceTree = "<group>"; };
+		7666462721BD799A00DB519B /* BCOWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BCOWebView.h; sourceTree = "<group>"; };
+		7666462B21BD857F00DB519B /* BCOWebViewIcon-256x256.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BCOWebViewIcon-256x256.png"; sourceTree = "<group>"; };
+		7666463121BDA1AF00DB519B /* BCOWebViewX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCOWebViewX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7666463321BDA1AF00DB519B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7666463421BDA1AF00DB519B /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		7666463621BDA1AF00DB519B /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
@@ -75,13 +76,14 @@
 		7666463C21BDA1B000DB519B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7666463E21BDA1B000DB519B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7666463F21BDA1B000DB519B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		7666464121BDA1B000DB519B /* AppearanceX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = AppearanceX.entitlements; sourceTree = "<group>"; };
+		7666464121BDA1B000DB519B /* BCOWebViewX.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BCOWebViewX.entitlements; sourceTree = "<group>"; };
 		7668130821C8721400E5D2E5 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		76A05D6D2348CCD3000093BD /* Shredder.mov */ = {isa = PBXFileReference; lastKnownFileType = video.quicktime; path = Shredder.mov; sourceTree = "<group>"; };
 		76C9F38721BFE2BE008B06D8 /* HelpWindowController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HelpWindowController.xib; sourceTree = "<group>"; };
 		76C9F38821BFE2BE008B06D8 /* HelpWindowController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HelpWindowController.m; sourceTree = "<group>"; };
 		76C9F38921BFE2BE008B06D8 /* HelpWindowController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HelpWindowController.h; sourceTree = "<group>"; };
-		76E4BC7F21C1E9D4008A7ECD /* Appearance.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = Appearance.sh; sourceTree = "<group>"; };
+		76E4BC7F21C1E9D4008A7ECD /* BCOWebView.sh */ = {isa = PBXFileReference; lastKnownFileType = text.script.sh; path = BCOWebView.sh; sourceTree = "<group>"; };
+		76E6CCF1245B1C5A00B5BE8B /* BCOWebViewIcon-1024x1024.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "BCOWebViewIcon-1024x1024.png"; sourceTree = "<group>"; };
 		76F03337243FE2D70085B442 /* ShredderIcon@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ShredderIcon@3x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -106,18 +108,18 @@
 		766645FD21BD786C00DB519B = {
 			isa = PBXGroup;
 			children = (
-				7666462221BD78C000DB519B /* com_bigcatos_Appearance.js */,
-				76E4BC7F21C1E9D4008A7ECD /* Appearance.sh */,
-				7666462721BD799A00DB519B /* Appearance.h */,
-				7666462621BD799A00DB519B /* Appearance.m */,
-				7666462021BD78C000DB519B /* Appearance.html */,
-				7666462B21BD857F00DB519B /* AppearanceIcon-256x256.png */,
-				7602448921C86D1700DD3518 /* AppearanceIcon-1024x1024.png */,
+				7666462221BD78C000DB519B /* BCOWebView.js */,
+				76E4BC7F21C1E9D4008A7ECD /* BCOWebView.sh */,
+				7666462721BD799A00DB519B /* BCOWebView.h */,
+				7666462621BD799A00DB519B /* BCOWebView.m */,
+				7666462021BD78C000DB519B /* BCOWebView.html */,
+				7666462B21BD857F00DB519B /* BCOWebViewIcon-256x256.png */,
+				76E6CCF1245B1C5A00B5BE8B /* BCOWebViewIcon-1024x1024.png */,
 				7668130821C8721400E5D2E5 /* Images.xcassets */,
 				76A05D6D2348CCD3000093BD /* Shredder.mov */,
 				76F03337243FE2D70085B442 /* ShredderIcon@3x.png */,
-				7666460821BD786C00DB519B /* Appearance */,
-				7666463221BDA1AF00DB519B /* AppearanceX */,
+				7666460821BD786C00DB519B /* BCOWebView */,
+				7666463221BDA1AF00DB519B /* BCOWebViewX */,
 				7666460721BD786C00DB519B /* Products */,
 			);
 			sourceTree = "<group>";
@@ -125,13 +127,13 @@
 		7666460721BD786C00DB519B /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7666460621BD786C00DB519B /* Appearance.app */,
-				7666463121BDA1AF00DB519B /* AppearanceX.app */,
+				7666460621BD786C00DB519B /* BCOWebView.app */,
+				7666463121BDA1AF00DB519B /* BCOWebViewX.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7666460821BD786C00DB519B /* Appearance */ = {
+		7666460821BD786C00DB519B /* BCOWebView */ = {
 			isa = PBXGroup;
 			children = (
 				7666460921BD786C00DB519B /* AppDelegate.h */,
@@ -143,14 +145,15 @@
 				7666461721BD786E00DB519B /* Info.plist */,
 				7666461821BD786E00DB519B /* main.m */,
 			);
-			path = Appearance;
+			path = BCOWebView;
 			sourceTree = "<group>";
 		};
-		7666463221BDA1AF00DB519B /* AppearanceX */ = {
+		7666463221BDA1AF00DB519B /* BCOWebViewX */ = {
 			isa = PBXGroup;
 			children = (
 				7666463321BDA1AF00DB519B /* AppDelegate.h */,
 				7666463421BDA1AF00DB519B /* AppDelegate.m */,
+				7654949C245C224D00561E01 /* Credits.html */,
 				76C9F38921BFE2BE008B06D8 /* HelpWindowController.h */,
 				76C9F38821BFE2BE008B06D8 /* HelpWindowController.m */,
 				76C9F38721BFE2BE008B06D8 /* HelpWindowController.xib */,
@@ -159,17 +162,17 @@
 				7666463B21BDA1B000DB519B /* Main.storyboard */,
 				7666463E21BDA1B000DB519B /* Info.plist */,
 				7666463F21BDA1B000DB519B /* main.m */,
-				7666464121BDA1B000DB519B /* AppearanceX.entitlements */,
+				7666464121BDA1B000DB519B /* BCOWebViewX.entitlements */,
 			);
-			path = AppearanceX;
+			path = BCOWebViewX;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7666460521BD786C00DB519B /* Appearance */ = {
+		7666460521BD786C00DB519B /* BCOWebView */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7666461C21BD786E00DB519B /* Build configuration list for PBXNativeTarget "Appearance" */;
+			buildConfigurationList = 7666461C21BD786E00DB519B /* Build configuration list for PBXNativeTarget "BCOWebView" */;
 			buildPhases = (
 				7666460221BD786C00DB519B /* Sources */,
 				7666460321BD786C00DB519B /* Frameworks */,
@@ -180,14 +183,14 @@
 			);
 			dependencies = (
 			);
-			name = Appearance;
-			productName = Appearance;
-			productReference = 7666460621BD786C00DB519B /* Appearance.app */;
+			name = BCOWebView;
+			productName = BCOWebView;
+			productReference = 7666460621BD786C00DB519B /* BCOWebView.app */;
 			productType = "com.apple.product-type.application";
 		};
-		7666463021BDA1AF00DB519B /* AppearanceX */ = {
+		7666463021BDA1AF00DB519B /* BCOWebViewX */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7666464221BDA1B000DB519B /* Build configuration list for PBXNativeTarget "AppearanceX" */;
+			buildConfigurationList = 7666464221BDA1B000DB519B /* Build configuration list for PBXNativeTarget "BCOWebViewX" */;
 			buildPhases = (
 				7666462D21BDA1AF00DB519B /* Sources */,
 				7666462E21BDA1AF00DB519B /* Frameworks */,
@@ -199,9 +202,9 @@
 			);
 			dependencies = (
 			);
-			name = AppearanceX;
-			productName = AppearanceX;
-			productReference = 7666463121BDA1AF00DB519B /* AppearanceX.app */;
+			name = BCOWebViewX;
+			productName = BCWebViewX;
+			productReference = 7666463121BDA1AF00DB519B /* BCOWebViewX.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -226,7 +229,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 7666460121BD786C00DB519B /* Build configuration list for PBXProject "Appearance" */;
+			buildConfigurationList = 7666460121BD786C00DB519B /* Build configuration list for PBXProject "BCOWebView" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -239,8 +242,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7666460521BD786C00DB519B /* Appearance */,
-				7666463021BDA1AF00DB519B /* AppearanceX */,
+				7666460521BD786C00DB519B /* BCOWebView */,
+				7666463021BDA1AF00DB519B /* BCOWebViewX */,
 			);
 		};
 /* End PBXProject section */
@@ -254,12 +257,12 @@
 				76F03338243FE2D70085B442 /* ShredderIcon@3x.png in Resources */,
 				76A05D6E2348CCD3000093BD /* Shredder.mov in Resources */,
 				7666461621BD786E00DB519B /* LaunchScreen.storyboard in Resources */,
-				7666462521BD78C000DB519B /* com_bigcatos_Appearance.js in Resources */,
-				7666462321BD78C000DB519B /* Appearance.html in Resources */,
-				7602448C21C86D1700DD3518 /* AppearanceIcon-1024x1024.png in Resources */,
+				7666462521BD78C000DB519B /* BCOWebView.js in Resources */,
+				7666462321BD78C000DB519B /* BCOWebView.html in Resources */,
 				7666461121BD786C00DB519B /* Main.storyboard in Resources */,
-				76E4BC8021C1E9D4008A7ECD /* Appearance.sh in Resources */,
-				7666462C21BD857F00DB519B /* AppearanceIcon-256x256.png in Resources */,
+				76E6CCF2245B1C5B00B5BE8B /* BCOWebViewIcon-1024x1024.png in Resources */,
+				76E4BC8021C1E9D4008A7ECD /* BCOWebView.sh in Resources */,
+				7666462C21BD857F00DB519B /* BCOWebViewIcon-256x256.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,13 +272,14 @@
 			files = (
 				766B4E6C21C87BF4003F3CB0 /* Images.xcassets in Resources */,
 				76DF515B234C090B00304E1A /* Shredder.mov in Resources */,
-				76BD946221C364F100EF30E6 /* Appearance.h in Resources */,
+				76BD946221C364F100EF30E6 /* BCOWebView.h in Resources */,
 				76C9F38A21BFE2BE008B06D8 /* HelpWindowController.xib in Resources */,
-				76E54CC821BDC3720077F48D /* AppearanceIcon-256x256.png in Resources */,
-				7666464621BDAB6400DB519B /* Appearance.html in Resources */,
+				76E54CC821BDC3720077F48D /* BCOWebViewIcon-256x256.png in Resources */,
+				7666464621BDAB6400DB519B /* BCOWebView.html in Resources */,
 				7666463D21BDA1B000DB519B /* Main.storyboard in Resources */,
-				76E4BC8121C1E9D4008A7ECD /* Appearance.sh in Resources */,
-				76E54CC921BDC40D0077F48D /* com_bigcatos_Appearance.js in Resources */,
+				76E4BC8121C1E9D4008A7ECD /* BCOWebView.sh in Resources */,
+				76E54CC921BDC40D0077F48D /* BCOWebView.js in Resources */,
+				7654949D245C224D00561E01 /* Credits.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -297,7 +301,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nFIX_APPEARANCE_HTML=NO ${SRCROOT}/Appearance.sh ${SRCROOT} ${TARGET_BUILD_DIR}/Appearance.app \"$vn ($bn)\" Appearance.html\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nFIX_BCOWEBVIEW_HTML=NO ${SRCROOT}/BCOWebView.sh ${SRCROOT} ${TARGET_BUILD_DIR}/BCOWebView.app \"$vn ($bn)\" BCOWebView.html\n";
 		};
 		7696327422D0033300D3DC07 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -314,7 +318,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nFIX_APPEARANCE_HTML=NO ${SRCROOT}/Appearance.sh ${SRCROOT} ${TARGET_BUILD_DIR}/AppearanceX.app/Contents/Resources \"$vn ($bn)\" Appearance.html\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nFIX_BCOWEBVIEW_HTML=NO ${SRCROOT}/BCOWebView.sh ${SRCROOT} ${TARGET_BUILD_DIR}/BCOWebViewX.app/Contents/Resources \"$vn ($bn)\" BCOWebView.html\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -326,7 +330,7 @@
 				7666460E21BD786C00DB519B /* ViewController.m in Sources */,
 				7666461921BD786E00DB519B /* main.m in Sources */,
 				7666460B21BD786C00DB519B /* AppDelegate.m in Sources */,
-				7666462821BD799B00DB519B /* Appearance.m in Sources */,
+				7666462821BD799B00DB519B /* BCOWebView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -337,7 +341,7 @@
 				7666463821BDA1AF00DB519B /* ViewController.m in Sources */,
 				7666464021BDA1B000DB519B /* main.m in Sources */,
 				7666463521BDA1AF00DB519B /* AppDelegate.m in Sources */,
-				7666464521BDA60A00DB519B /* Appearance.m in Sources */,
+				7666464521BDA60A00DB519B /* BCOWebView.m in Sources */,
 				76C9F38B21BFE2BE008B06D8 /* HelpWindowController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -488,13 +492,13 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VN54MV749;
 				GCC_PREPROCESSOR_DEFINITIONS = "DEBUG=1";
-				INFOPLIST_FILE = Appearance/Info.plist;
+				INFOPLIST_FILE = BCOWebView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.Appearance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.BCOWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -506,13 +510,13 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = iOSAppIcons;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 6VN54MV749;
-				INFOPLIST_FILE = Appearance/Info.plist;
+				INFOPLIST_FILE = BCOWebView/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.Appearance;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.BCOWebView;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -522,7 +526,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = macOSAppIcons;
-				CODE_SIGN_ENTITLEMENTS = AppearanceX/AppearanceX.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BCOWebViewX/BCOWebViewX.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
@@ -530,15 +534,15 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
-					"kAppearanceX=1",
+					"kBCOWebViewX=1",
 				);
-				INFOPLIST_FILE = "$(SRCROOT)/AppearanceX/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BCOWebViewX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.AppearanceX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.BCOWebViewX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -548,19 +552,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = macOSAppIcons;
-				CODE_SIGN_ENTITLEMENTS = AppearanceX/AppearanceX.entitlements;
+				CODE_SIGN_ENTITLEMENTS = BCOWebViewX/BCOWebViewX.entitlements;
 				CODE_SIGN_IDENTITY = "Mac Developer";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = 6VN54MV749;
 				ENABLE_HARDENED_RUNTIME = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/AppearanceX/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/BCOWebViewX/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.AppearanceX;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bigcatos.BCOWebViewX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = macosx;
 			};
@@ -569,7 +573,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7666460121BD786C00DB519B /* Build configuration list for PBXProject "Appearance" */ = {
+		7666460121BD786C00DB519B /* Build configuration list for PBXProject "BCOWebView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7666461A21BD786E00DB519B /* Debug */,
@@ -578,7 +582,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7666461C21BD786E00DB519B /* Build configuration list for PBXNativeTarget "Appearance" */ = {
+		7666461C21BD786E00DB519B /* Build configuration list for PBXNativeTarget "BCOWebView" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7666461D21BD786E00DB519B /* Debug */,
@@ -587,7 +591,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7666464221BDA1B000DB519B /* Build configuration list for PBXNativeTarget "AppearanceX" */ = {
+		7666464221BDA1B000DB519B /* Build configuration list for PBXNativeTarget "BCOWebViewX" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				7666464321BDA1B000DB519B /* Debug */,

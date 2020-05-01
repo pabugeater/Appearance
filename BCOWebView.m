@@ -1,10 +1,10 @@
 //
-//  Appearance.m, Ver 1.fixme
+//  BCOWebView.m, Ver 1.fixme
 //
 //  Created by Steve Lidie on 12/8/18.
 //
 
-#import "Appearance.h"
+#import "BCOWebView.h"
 
 @interface NSURL (parameterDictionaryForMailTo)
     
@@ -37,7 +37,7 @@
     
 @end
 
-@implementation Appearance
+@implementation BCOWebView
 
 - (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame {
     
@@ -45,7 +45,7 @@
     WKPreferences *pref = [[WKPreferences alloc] init];
     pref.javaScriptEnabled = YES;
     configuration.preferences = pref;
-#ifdef kAppearanceX
+#ifdef kBCOWebViewX
     if ( @available(macOS 12.0, *) ) {
         configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
     }
@@ -54,10 +54,10 @@
         configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
     }
 #endif
-#ifndef kAppearanceX
+#ifndef kBCOWebViewX
     configuration.allowsInlineMediaPlayback = YES;
 #endif
-    [configuration.userContentController addScriptMessageHandler:self name:@"doAppearanceAction"];
+    [configuration.userContentController addScriptMessageHandler:self name:@"BCOWebViewSendJSMessage"];
     if ( self = [super initWithFrame:frame configuration:configuration] ) {
         NSArray *paths = NSSearchPathForDirectoriesInDomains(NSLibraryDirectory, NSUserDomainMask, YES);
         NSString *path = [[paths objectAtIndex:0] stringByAppendingPathComponent:@"MyCaches"];
@@ -69,7 +69,7 @@
         }
         NSString *path2HTML = path;
         if ( ! path2HTML ) {
-            NSLog(@"Appearance HTML file not found: %@", file);
+            NSLog(@"BCOWebView HTML file not found: %@", file);
             return nil;
         }
         NSString *u1 = [path2HTML stringByDeletingLastPathComponent];
@@ -96,59 +96,32 @@
 } // end initWithFileandFrame
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-    
-    [self updateWebViewAppearance];
-    
+        
 } // end didFinishNavigation
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
     NSLog(@"didFailNavgication");
 }
 
-- (void) addAppearanceConstraintsForView:(id)containerView {
+- (void) addConstraintsForView:(id)containerView {
 
-    Appearance *ap = self;
-    [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[ap]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(ap)]];
-    [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[ap]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(ap)]];
+    BCOWebView *bwv = self;
+    [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"H:|[bwv]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(bwv)]];
+    [containerView addConstraints:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[bwv]|" options:0 metrics:nil views:NSDictionaryOfVariableBindings(bwv)]];
 
-} // end addAppearanceConstraintsToView
+} // end addConstraintsToView
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     
     NSString *msg = (NSString *)message.body;
-    if ( [msg isEqualToString:@"saveState"] ) {
-        [self saveState];
-    } else {
-        NSLog(@" unknown Appearance message=%@", msg);
-    }
+    NSLog(@" Unknown BCOWebViewSendJSMessage '%@'.", msg);
     
 } // end didReceiveScriptMessage
 
-- (void) saveState {
-    
-    // Fetch the JavaScript session variables and update NSUserDefaults to match.
-    
-    void(^getJsState)(NSString *, NSError *) = ^(NSString *rc, NSError *error) {
-        if ( error ) {
-            NSLog(@"getJsState :  rc=%@, error=%@", rc, error);
-        }
-        NSString *darkMode;
-        darkMode = rc;
-        if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
-        NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-        [defaults setObject:darkMode forKey:@"darkMode"];
-        [defaults synchronize];
-    };
-    
-    NSString *js = @"com_bigcatos_getJsState()";
-    [self evaluateJavaScript:js completionHandler:(void (^)(id, NSError *error))getJsState ];
-
-} // end saveState
-
 -(void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))WVcompletionHandler {
     
-#ifndef kAppearanceX
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"Appearance", nil) message: message preferredStyle: UIAlertControllerStyleAlert];
+#ifndef kBCOWebViewX
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"BCOWebView", nil) message: message preferredStyle: UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK action") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) { WVcompletionHandler(); }];
     [alert addAction:okAction];
     UIViewController *vc = self.contentController;
@@ -172,7 +145,7 @@
 #pragma mark -
 #pragma mark WKWebView and MFMailComposeViewController delegate methods for parameterDictionaryForMailTo category
     
-#ifndef kAppearanceX
+#ifndef kBCOWebViewX
 
 - (void)webView:(WKWebView *)webView decidePolicyForNavigationAction:(WKNavigationAction *)navigationAction decisionHandler:(void  (^)(WKNavigationActionPolicy))decisionHandler {
     
@@ -228,52 +201,6 @@
     
 } // end didFinishWithResult
     
-#endif
-
-#pragma mark - appearance change methods
-
-- (void) updateWebViewAppearance {
-    
-    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
-    NSString *darkMode;
-#ifdef kAppearanceX
-    if (@available(macOS 10.14, *)) {
-        darkMode = [NSApplication sharedApplication].effectiveAppearance.name;
-        darkMode = ( darkMode == NSAppearanceNameDarkAqua ? @"dark" : @"" );
-    } else {
-        darkMode = [defaults objectForKey:@"darkMode"];
-        if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
-    }
-#else
-    if (@available(iOS 12.0, *)) {
-        darkMode = @"";
-        if ( self.traitCollection.userInterfaceStyle == UIUserInterfaceStyleDark ) darkMode = @"dark";
-    } else {
-        darkMode = [defaults objectForKey:@"darkMode"];
-        if ( ! darkMode || [darkMode length] == 0 || [darkMode isEqualToString:@"null"] ) darkMode = @"";
-    }
-#endif
-    [defaults setObject:darkMode forKey:@"darkMode"];
-    
-    NSString *js = [NSString stringWithFormat:@"com_bigcatos_setExplicitAppearance( \"%@\" ); ", darkMode];
-    [self evaluateJavaScript:js completionHandler:self.checkJsStatus];
-
-} // end updateWebViewAppearance
-
-#ifndef kAppearanceX
-- (void)traitCollectionDidChange:(UITraitCollection *)previousTraitCollection {
-    
-    [super traitCollectionDidChange:previousTraitCollection];
-    [self updateWebViewAppearance];
-    
-} // end traitCollectionDidChange
-#else
-- (void) viewDidChangeEffectiveAppearance {
-
-    [super viewDidChangeEffectiveAppearance];
-    [self updateWebViewAppearance];
-
-} // end viewDidChangeEffectiveAppearance
 #endif
 
 @end

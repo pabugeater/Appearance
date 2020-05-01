@@ -1,6 +1,6 @@
 //
 //  AppDelegate.m
-//  AppearanceX
+//  BCOWebViewX
 //
 //  Created by Steve Lidie on 12/9/18.
 //  Copyright © 2018 Steve Lidie. All rights reserved.
@@ -17,9 +17,9 @@
     NSString *appVersion = (NSString *)[infoPlist objectForKey:@"CFBundleShortVersionString"];
     NSString *appBuild = (NSString *)[infoPlist objectForKey:@"CFBundleVersion"];
     self.version = [NSString stringWithFormat:@"%@(%@)", appVersion, appBuild];
-    NSLog(@"### AppearanceX version %@.", self.version);
+    NSLog(@"### BCOWebViewX version %@.", self.version);
     NSMenu *rootMenu = [NSApp mainMenu];
-    NSMenuItem *mi = [rootMenu itemWithTitle:@"AppearanceX"];
+    NSMenuItem *mi = [rootMenu itemWithTitle:@"BCOWebViewX"];
     NSMenu *subMenu = [mi submenu];
     [subMenu removeItemAtIndex:2]; // remove Preferences...
     mi = [rootMenu itemWithTitle:@"File"];
@@ -41,9 +41,9 @@
     self.hwc = [[HelpWindowController alloc] initWithWindowNibName:@"HelpWindowController"];
     NSWindow *w = self.hwc.window; // referencing the window instantiates and displays it
     NSView *v = w.contentView;
-    self.ap = [[Appearance alloc] initWithFile:@"Appearance.html" contentController:self.hwc andFrame:v.frame];
-    [v addSubview:self.ap];
-    [self.ap addAppearanceConstraintsForView:v];
+    self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html" contentController:self.hwc andFrame:v.frame];
+    [v addSubview:self.bwv];
+    [self.bwv addConstraintsForView:v];
     [w makeKeyAndOrderFront:self];
     
 } // end doHelpAction
@@ -51,9 +51,9 @@
 - (IBAction) doExportAction:(id)sender {
     
     NSBundle *bundle = [NSBundle mainBundle];
-    NSString *sourcePath = [bundle pathForResource:@"Appearance" ofType:@"sh"];
+    NSString *sourcePath = [bundle pathForResource:@"BCOWebView" ofType:@"sh"];
     if (sourcePath == nil) {
-        NSLog(@"Appearance.sh was not found");
+        NSLog(@"BCOWebView.sh was not found");
         return;
     }
     
@@ -63,8 +63,8 @@
     NSString *nowStr = [df stringFromDate:now];
     NSError *err;
     NSSavePanel *save = [NSSavePanel savePanel];
-    save.nameFieldStringValue = [NSString stringWithFormat:@"Appearance-%@-%@", self.version, nowStr];
-    save.title = @"Export Appearance Bundle";
+    save.nameFieldStringValue = [NSString stringWithFormat:@"BCOWebView-%@-%@", self.version, nowStr];
+    save.title = @"Export BCOWebView Bundle";
     NSInteger result = [save runModal];
     if ( result == NSModalResponseOK ) {
         NSURL *outURL = [save URL];
@@ -82,7 +82,7 @@
             NSString *srcFolder = [sourcePath stringByDeletingLastPathComponent];
             NSString *escapedPath = [outURL.path stringByReplacingOccurrencesOfString:@"(" withString:@"\\("];
                       escapedPath = [escapedPath stringByReplacingOccurrencesOfString:@")" withString:@"\\)"];
-            NSString *cmd = [NSString stringWithFormat:@"FIX_APPEARANCE_HTML=YES %@/Appearance.sh %@ %@ '%@' %@", srcFolder, srcFolder, escapedPath, self.version, @"Appearance.sh Appearance.h Appearance.m Appearance.html com_bigcatos_Appearance.js"];
+            NSString *cmd = [NSString stringWithFormat:@"FIX_BCOWEBVIEW_HTML=YES %@/BCOWebView.sh %@ %@ '%@' %@", srcFolder, srcFolder, escapedPath, self.version, @"BCOWebView.sh BCOWebView.h BCOWebView.m BCOWebView.html BCOWebView.js"];
             NSInteger stat = system ( [cmd UTF8String] );
             if ( stat == 0 ) {
                 NSLog(@"Export succeeded.");

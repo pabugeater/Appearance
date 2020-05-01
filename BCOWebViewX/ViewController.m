@@ -1,6 +1,6 @@
 //
 //  ViewController.m
-//  AppearanceX
+//  BCOWebViewX
 //
 //  Created by Steve Lidie on 12/9/18.
 //  Copyright © 2018 Steve Lidie. All rights reserved.
@@ -18,9 +18,9 @@
     [super viewWillAppear];
     [[NSApplication sharedApplication] mainWindow].delegate = self;
     
-    self.ap = [[Appearance alloc] initWithFile:@"Appearance.html" contentController:self.view andFrame:self.view.bounds];
-    [self.view addSubview:self.ap];
-    [self.ap addAppearanceConstraintsForView:self.view];
+    self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html" contentController:self.view andFrame:self.view.bounds];
+    [self.view addSubview:self.bwv];
+    [self.bwv addConstraintsForView:self.view];
 
 }  // end viewWillAppear
 
