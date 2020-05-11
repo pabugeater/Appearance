@@ -39,8 +39,9 @@
 
 @implementation BCOWebView
 
-- (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame {
+- (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame completionHandler:(void (^)(id, NSError *error))completionHandler {
     
+    self.initCompletionHandler = completionHandler;
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     WKPreferences *pref = [[WKPreferences alloc] init];
     pref.javaScriptEnabled = YES;
@@ -96,12 +97,16 @@
 } // end initWithFileandFrame
 
 - (void)webView:(WKWebView *)webView didFinishNavigation:(WKNavigation *)navigation {
-        
+    
+    if ( self.initCompletionHandler) self.initCompletionHandler( @"BCOWebView initWithFile did load content.", nil );
+    
 } // end didFinishNavigation
 
 - (void)webView:(WKWebView *)webView didFailNavigation:(WKNavigation *)navigation withError:(NSError *)error {
-    NSLog(@"didFailNavgication");
-}
+    
+    if ( self.initCompletionHandler) self.initCompletionHandler( @"BCOWebView initWithFile failed to load content.", error );
+    
+} // end didFailNavigation
 
 - (void) addConstraintsForView:(id)containerView {
 
@@ -134,10 +139,8 @@
     NSAlert *alert = [[NSAlert alloc] init];
     [alert addButtonWithTitle:@"OK"];
     [alert setMessageText:message];
-    NSWindowController *wc = self.contentController;
-    [alert beginSheetModalForWindow:wc.window completionHandler:^(NSModalResponse returnCode) {
-        WVcompletionHandler();
-    }];
+    [alert runModal];
+    WVcompletionHandler();
 #endif
     
 } // end runJavaScriptAlertPanelWithMessage

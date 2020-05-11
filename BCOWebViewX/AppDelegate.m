@@ -41,7 +41,7 @@
     self.hwc = [[HelpWindowController alloc] initWithWindowNibName:@"HelpWindowController"];
     NSWindow *w = self.hwc.window; // referencing the window instantiates and displays it
     NSView *v = w.contentView;
-    self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html" contentController:self.hwc andFrame:v.frame];
+    self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html" contentController:self.hwc andFrame:v.frame completionHandler:nil];
     [v addSubview:self.bwv];
     [self.bwv addConstraintsForView:v];
     [w makeKeyAndOrderFront:self];

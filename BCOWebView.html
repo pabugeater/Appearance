@@ -8,197 +8,178 @@
 		<title>BCOWebView Help</title>
         <link rel="stylesheet" type="text/css" href="https://www.bigcatos.com/BigCatOs/styles/styles.css" />
         <script type="text/javascript" src="BCOWebView.js"></script>
-   
-    
     </head>
-    
-    
-    <body style="font-family: 'HelveticaNeue-Light', 'Helvetica Neue Light', 'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', LiberationSans, sans-serif; max-width:700px; margin:0px auto; padding:8px; ">
+  
+    <body class=etAl>
+        <b><font size=4><a name="toc"></a></font></b>
+        <p>
+        <img src="BCOWebViewIcon-256x256.png" style="position:relative; width:128px; height:128px; left:0px; top:20px; " />
+        <center><font color="#21adff" size=8><b><span style="position:relative; width:128px; height:128px; left:64px; top:-140px; ">Big Cats O!</span></b></font></center>
+        <center><font color="#21adff" size=7><b><span style="position:relative; width:128px; height:128px; left:64px; top:-150px; ">WkWebView</span></b></font></center>
+        <center><font size=3><b><span style="position:relative; width:128px; height:128px; left:64px; top:-150px; ">&nbsp</span></b></font></center>
+        <center><font size=3><span style="position:relative; width:128px; height:128px; left:64px; top:-150px; ">1.fixme</span></font></center>
+        <div style="position:relative; top:-130px; ">
+            <p>BCO take on WkWebView configured to handle Javascript Alert panels, inline videos, mailto: URLs, etc.
+            <ul>
+                <li><a onclick="alert( 'Hello, world!' )"><u>Test</u></a>&nbsp&nbsp<i>alert( 'Hello, world!' )</i>.
+                <li>The following inline video element should autoplay and shred, silently:
+                    <p>
+                    <video poster="ShredderIcon@3x.png" autoplay loop muted playsinline  width='64' height='64' style='border-radius: 10%; ' >
+                        <source src='Shredder.mov'>
+                        <img src="ShredderIcon@3x.png" title="Your browser does not support the mp4 movie format">
+                    </video>
+            </ul>
 
-	<div>
-<b><font size=4><a name="toc"></a></font></b>
-
-<p>
-<img src="BCOWebViewIcon-256x256.png" onclick="com_bigcatos_doDarkMode( event )" style="position:relative; width:128px; height:128px; left:0px; top:20px; " />
-<center><font color="#21adff" size=8><b><span style="position:relative; width:128px; height:128px; left:64px; top:-140px; ">Big Cats O!</span></b></font></center>
-<center><font color="#21adff" size=7><b><span style="position:relative; width:128px; height:128px; left:64px; top:-150px; ">WkWebView</span></b></font></center>
-<center><font size=3><b><span style="position:relative; width:128px; height:128px; left:64px; top:-150px; ">&nbsp</span></b></font></center>
-<!-- DO NOT CHANGE THE FOLLOWING VERSION NUMBER, CODE INITIALIZATION DOES A STRING SUBSTITUTION ON THIS VALUE -->
-<!-- DO NOT CHANGE THE FOLLOWING VERSION NUMBER, CODE INITIALIZATION DOES A STRING SUBSTITUTION ON THIS VALUE -->
-<!-- DO NOT CHANGE THE FOLLOWING VERSION NUMBER, CODE INITIALIZATION DOES A STRING SUBSTITUTION ON THIS VALUE -->
-<center><font size=3><span style="position:relative; width:128px; height:128px; left:64px; top:-150px; ">1.fixme</span></font></center>
-<!-- DO NOT CHANGE THE PREVIOUS VERSION NUMBER, CODE INITIALIZATION DOES A STRING SUBSTITUTION ON THIS VALUE -->
-<!-- DO NOT CHANGE THE PREVIOUS VERSION NUMBER, CODE INITIALIZATION DOES A STRING SUBSTITUTION ON THIS VALUE -->
-<!-- DO NOT CHANGE THE PREVIOUS VERSION NUMBER, CODE INITIALIZATION DOES A STRING SUBSTITUTION ON THIS VALUE -->
-
-<div style="position:relative; top:-130px; ">
-    <p>BCO take on WkWebView configured to handle Javascript Alert panels, inline videos, mailto: URLs, etc.
-
-    <p>This inline video element should autoplay and shred, silently:
-<p>
-<video poster="ShredderIcon@3x.png" autoplay loop muted playsinline  width='64' height='64' style='border-radius: 10%; ' >
-    <source src='Shredder.mov'>
-    <img src="ShredderIcon@3x.png" title="Your browser does not support the mp4 movie format">
-</video>
-
-<p><b><font size=4 color="#21adff">Topics</font></b>
-
-<details>
-<summary><font size=4><a name="intro">Usage</a></font></summary>
-
-<ul>
-    <li>Add this handful of additional statements to your HTML:
-        <ol>
-            <li>Head:<br>
-                <b>&lt;link rel="stylesheet" type="text/css" href="https://www.bigcatos.com/BigCatOs/styles/styles.css" /&gt;
-                <br>&lt;script type="text/javascript" src="https://www.bigcatos.com/BigCatOs/js/BCOWebView.js"&gt;&lt;/script&gt;</b>
-        </ol>
-
-    <p><li>Typical Objective-C usage:<br>
-        <pre style="display:inline; margin-top:0; ">
-    #include "BCOWebView.h"
-    BCOWebView *bwv;
-    bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html" contentController:self.view andFrame:self.view.bounds];
-    [self.view addSubview:bwv];
-    [bwv addConstraintsForView:self.view];
-        </pre>
-    <li>Build notes:<br>
-        <ul>
-            <li>To compile the BCOWebView class in macOS add <b>kBCOWebViewX=1</b> to the target's C Preprocessor section.
-            <li>Force source file BCOWebView.m into bundle Resources folder via a custom build phase Copy Files script. It's impossible to do this in standard Copy Bundle Resources phase.  Required for BCOWebView.sh.
-        </ul>
-    <p><li>Export note:<br>
-        Use <b>File / Export</b> to export BCOWebView files with substituted version numbers, suitable for distribution.  This essentially runs the following command:
-        <pre display:inline; style="margin-top:0; ">
-    BCOWebView.sh srcFolder/i.app/Contents/Resources destFolder/BCOWebView-2018.12.14-08.48.03 '1.3(3)' \
-    BCOwebVoew.sh BCOWebView.h BCOWebView.m BCOwebView.html BCOWebView.js
-        </pre>
-</ul>
-
-<p><a href="#toc" target="_self">Topics</a>
-</details>
-
-<details>
-<summary><font size=4><a name="new">What's New?</a></font></summary>
-
-<p><b>3.0 - 2020.05.01</b>
-<ul>
-    <li>Use CSS styling now, remove all old Appearance code.
-    <li>Because old Appearance configures WkWebView just how I want it, rename class to BCOWebView.
-    <li>Style page width: max-width:700px; margin:0px auto; padding:8px;
-    <li>Conform with Apple's 2020.06.30 App Store guidelines.
-    <li>Update for iOS 13.4.1 and macOS 10.15.4.
-</ul>
-
-<p><b>2.6 - 2019.12.27</b>
-<ul>
-    <li>Because Mac Catalyst doesn't support a keyboard, remove text "or type 'a'" to toggle Appearance.
-</ul>
-
-<p><b>2.5 - 2019.10.07</b>
-<ul>
-    <li>Explicitly configure WKWebView to allow inline autoplay videos for macOS and iOS.
-    <li>Update for macOS 10.15 and iOS 13.1.2.
-</ul>
-
-<p><b>2.4 - 2019.08.13</b>
-<ul>
-    <li>Untested: revert to loadHTMLString if iOS < 9.
-</ul>
-
-<p><b>2.3 - 2019.08.10</b>
-<ul>
-    <li>Fix typo in Appearance.html.
-</ul>
-
-<p><b>2.2 - 2019.08.05</b>
-<ul>
-    <li>Transition color change, currently linear.
-</ul>
-
-<p><b>2.1 - 2019.08.05</b>
-<ul>
-<li>Hide Help div using display rather than opacity.
-</ul>
-
-<p><b>2.0 - 2019.08.05</b>
-<ul>
-    <li>Move from sessionStorage to localStorage.
-</ul>
-
-<p><b>1.8 - 2019.07.05</b>
-<ul>
-    <li>Keep logs cleaner, check for undefined elements.
-    <li>Help div timeout halved to 5 seconds.
-    <li>Build run script updates version/build in Appearance.html in debug mode.
-</ul>
-
-<p><b>1.7 - 2019.07.03</b>
-<ul>
-    <li>Add support for iOS WKWebView mailto: URL, and options subject and recipient.
-    <li>Appearance.txt is a bad idea, incorporate those notes directly into the HTML.
-</ul>
-
-<p><b>1.6 - 2019.03.23</b>
-<ul>
-    <li>Re-enable Solar Coaster blue/cyan toggle code.
-</ul>
-
-<p><b>1.5 - 2019.03.21</b>
-<ul>
-    <li>Suppress all macOS alert beeps when 'a' key pressed.
-    <LI>Properly catch errors when removing the Help div and updating user defaults.
-</ul>
-
-<p><b>1.4 - 2019.03.21</b>
-<ul>
-    <li>Suppress macOS alert beep when 'a' key pressed.
-</ul>
-
-<p><b>1.3 - 2018.12.12</b>
-<ul>
-    <li>AppearanceX starts with its appearance matching macOS's appearance, although typing "a" or touching the Appearance icon still temporarily toggles the App's appearance.
-    <li>AppearanceX also responds to a System Preferences Appearance change.
-    <li>Reduce number of #if - #endif statements by changing explicit types to id and consolidating code.
-    <li>Add AppearanceX / Export menu item to export Appearance.* suite with proper version numbers.
-    <li>Sandbox AppearanceX.
-    <li>Add App icons.
-</ul>
-
-<p><b>1.2 - 2018.12.10</b>
-<ul>
-    <li>Bug fixes: light mode " " --> ""; close Help window when App quites.
-</ul>
-
-<p><b>1.1 - 2018.12.08</b>
-<ul>
-    <li>Add Appearance.h and Appearance.m.
-</ul>
-
-<p><b>1.0 - 2018.11.21</b>
-<ul>
-    <li>Add Appearance.js and Appearance.txt.
-</ul>
-
-<p><a href="#toc" target="_self">Topics</a>
-</details>
-
-<p>
-<b><font size=4 color="#21adff"><a name="support">Support</a></font></b>
-<p><p style="line-height:14.4px;text-align:center;margin-bottom:0px;margin-top:0px;font-size:10px;">Copyright (&copy) 2018 - 2020 BigCatOs. All rights reserved.&nbsp;&nbsp; | &nbsp;&nbsp;<a href="mailto:support@bigcatos.com?subject=BCOWebView 1.fixme, Comment / Question">Contact</a></p>
-
-<p><a class="one" href="#toc" target="_self">Topics</a>
-<!-- -->
-<!-- -->
-
-<!-- For HTML testing enable the following line to explicity execute doDarkMode().                                -->
-<!-- For App testing doDarkMode() is automatically called by the Objective-C wrapper, disable the following line. -->
-<!-- <script>com_bigcatos_doDarkMode( -2 );</script> -->
-
-<!-- -->
-<!-- -->
-
-<!-- <script>alert("Alert Test");</script> -->
-
-	</body>
+            <p><b><font size=4 color="#21adff">Topics</font></b>
+            
+            <details>
+                <summary><font size=4><a name="intro">Usage</a></font></summary>
+                <ul>
+                    <li>Add this handful of additional statements to your HTML:
+                        <ul>
+                            <li>Head:<br>
+                                &lt;link rel="stylesheet" type="text/css" href="https://www.bigcatos.com/BigCatOs/styles/styles.css" /&gt;
+                                <br>&lt;script type="text/javascript" src="https://www.bigcatos.com/BigCatOs/js/BCOWebView.js"&gt;&lt;/script&gt;
+                            <li>Body:<br>
+                                &lt;body class=etAl&gt;
+                        </ul>
+                        <p>
+                    <li>Typical Objective-C usage:<br>
+                    <pre style="display:inline; margin-top:0; ">
+#include "BCOWebView.h"
+BCOWebView *bwv;
+bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html"
+   contentController:self.view andFrame:self.view.bounds
+   completionHandler:^(id __nullable result, NSError *__nullable error) {
+       NSLog(@"BCOWebView in completion handler, result '%@'", result);
+       if ( error ) NSLog(@"BCOWebView initWithFile error: %@", error);
+   }
+];
+[self.view addSubview:bwv];
+[bwv addConstraintsForView:self.view];
+                    </pre>
+                    <li>Build notes:<br>
+                        <ul>
+                            <li>To compile the BCOWebView class in macOS add <b>kBCOWebViewX=1</b> to the target's C Preprocessor section.
+                            <li>Force source file BCOWebView.m into bundle Resources folder via a custom build phase Copy Files script.
+                                    It's impossible to do this in standard Copy Bundle Resources phase.  Required for BCOWebView.sh.
+                        </ul>
+                        <p><li>Export note:<br>
+                            Use <b>File / Export</b> to export BCOWebView files with substituted version numbers, suitable for distribution.
+                            This essentially runs the following command:
+                            <pre display:inline; style="margin-top:0; ">
+BCOWebView.sh srcFolder/i.app/Contents/Resources destFolder/BCOWebView-2018.12.14-08.48.03 '1.3(3)' \
+BCOwebVoew.sh BCOWebView.h BCOWebView.m BCOwebView.html BCOWebView.js
+                            </pre>
+                        </ul>
+                        <p><a href="#toc" target="_self">Topics</a>
+            </details>
+            
+            <details>
+                <summary><font size=4><a name="new">What's New?</a></font></summary>
+                <p><b>3.0 - 2020.05.01</b>
+                <ul>
+                    <li>Use CSS styling now for dark mode, remove all old Appearance code.
+                    <li>Because old Appearance configures WkWebView just how I want it, keep code and rename class to BCOWebView.
+                    <li>Conform with Apple's 2020.06.30 App Store guidelines.
+                    <li>Update for iOS 13.4.1 and macOS 10.15.4.
+                </ul>
+                
+                <p><b>2.6 - 2019.12.27</b>
+                <ul>
+                    <li>Because Mac Catalyst doesn't support a keyboard, remove text "or type 'a'" to toggle Appearance.
+                </ul>
+                
+                <p><b>2.5 - 2019.10.07</b>
+                <ul>
+                    <li>Explicitly configure WKWebView to allow inline autoplay videos for macOS and iOS.
+                    <li>Update for macOS 10.15 and iOS 13.1.2.
+                </ul>
+                
+                <p><b>2.4 - 2019.08.13</b>
+                <ul>
+                    <li>Untested: revert to loadHTMLString if iOS < 9.
+                </ul>
+                
+                <p><b>2.3 - 2019.08.10</b>
+                <ul>
+                    <li>Fix typo in Appearance.html.
+                </ul>
+                
+                <p><b>2.2 - 2019.08.05</b>
+                <ul>
+                    <li>Transition color change, currently linear.
+                </ul>
+                
+                <p><b>2.1 - 2019.08.05</b>
+                <ul>
+                    <li>Hide Help div using display rather than opacity.
+                </ul>
+                
+                <p><b>2.0 - 2019.08.05</b>
+                <ul>
+                    <li>Move from sessionStorage to localStorage.
+                </ul>
+                
+                <p><b>1.8 - 2019.07.05</b>
+                <ul>
+                    <li>Keep logs cleaner, check for undefined elements.
+                    <li>Help div timeout halved to 5 seconds.
+                    <li>Build run script updates version/build in Appearance.html in debug mode.
+                </ul>
+                
+                <p><b>1.7 - 2019.07.03</b>
+                <ul>
+                    <li>Add support for iOS WKWebView mailto: URL, and options subject and recipient.
+                    <li>Appearance.txt is a bad idea, incorporate those notes directly into the HTML.
+                </ul>
+                
+                <p><b>1.6 - 2019.03.23</b>
+                <ul>
+                    <li>Re-enable Solar Coaster blue/cyan toggle code.
+                </ul>
+                
+                <p><b>1.5 - 2019.03.21</b>
+                <ul>
+                    <li>Suppress all macOS alert beeps when 'a' key pressed.
+                    <li>Properly catch errors when removing the Help div and updating user defaults.
+                </ul>
+                
+                <p><b>1.4 - 2019.03.21</b>
+                <ul>
+                    <li>Suppress macOS alert beep when 'a' key pressed.
+                </ul>
+                
+                <p><b>1.3 - 2018.12.12</b>
+                <ul>
+                    <li>AppearanceX starts with its appearance matching macOS's appearance, although typing "a" or touching the Appearance icon still temporarily toggles the App's appearance.
+                    <li>AppearanceX also responds to a System Preferences Appearance change.
+                    <li>Reduce number of #if - #endif statements by changing explicit types to id and consolidating code.
+                    <li>Add AppearanceX / Export menu item to export Appearance.* suite with proper version numbers.
+                    <li>Sandbox AppearanceX.
+                    <li>Add App icons.
+                </ul>
+                
+                <p><b>1.2 - 2018.12.10</b>
+                <ul>
+                    <li>Bug fixes: light mode " " --> ""; close Help window when App quites.
+                </ul>
+                
+                <p><b>1.1 - 2018.12.08</b>
+                <ul>
+                    <li>Add Appearance.h and Appearance.m.
+                </ul>
+                
+                <p><b>1.0 - 2018.11.21</b>
+                <ul>
+                    <li>Add Appearance.js and Appearance.txt.
+                </ul>
+                <p><a href="#toc" target="_self">Topics</a>
+            </details>
+            
+            <p><p style="line-height:14.4px;text-align:center;margin-bottom:0px;margin-top:0px;font-size:10px;">Copyright (&copy) 2018 - 2020 BigCatOs.
+            All rights reserved.&nbsp;&nbsp; | &nbsp;&nbsp;<a href="mailto:support@bigcatos.com?subject=BCOWebView 1.fixme, Comment / Question">Contact</a></p>
+            
+        </div>
+    </body>
 </html>

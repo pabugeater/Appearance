@@ -20,8 +20,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property( nonatomic, strong ) id contentController;
 @property( nonatomic, copy ) void(^checkJsStatus)(NSString *returnCode, NSError *error);
+@property( nonatomic, copy ) void(^initCompletionHandler)(NSString *__nullable returnCode, NSError *__nullable error);
 
-- (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame;
+- (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame  completionHandler:(void (^__nullable)(id, NSError *__nullable error))completionHandler;
 - (void) addConstraintsForView:(id)view;
 
 @end

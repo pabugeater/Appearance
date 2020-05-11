@@ -13,7 +13,13 @@
 - (void) viewWillAppear:(BOOL)animated {
     
     [super viewWillAppear:animated];    
-    self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html" contentController:self andFrame:self.view.bounds];
+    self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html"
+                              contentController:self andFrame:self.view.bounds
+                              completionHandler:^(id __nullable result, NSError *__nullable error) {
+            NSLog(@"BCOWebView in completion handler, result '%@'", result);
+            if ( error ) NSLog(@"BCOWebView initWithFile error: %@", error);
+        }
+    ];
     [self.view addSubview:self.bwv];
     [self.bwv addConstraintsForView:self.view];
 
