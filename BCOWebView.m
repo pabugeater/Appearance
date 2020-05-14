@@ -68,17 +68,17 @@
             NSString *ext = [file pathExtension];
             path = [[NSBundle mainBundle] pathForResource:fileName ofType:ext];
         }
-        NSString *path2HTML = path;
-        if ( ! path2HTML ) {
-            NSLog(@"BCOWebView HTML file not found: %@", file);
-            return nil;
-        }
-        NSString *u1 = [path2HTML stringByDeletingLastPathComponent];
-        NSURL *baseURL = [NSURL fileURLWithPath:u1];
         self.UIDelegate = self;
         self.navigationDelegate = self;
         self.contentController = contentController; // UIViewController or NSWindow (from NSWindowController or NSView)
         self.translatesAutoresizingMaskIntoConstraints = NO;
+        NSString *path2HTML = path;
+        if ( ! path2HTML ) {
+            NSLog(@"BCOWebView HTML file not found: %@", file);
+            return self;
+        }
+        NSString *u1 = [path2HTML stringByDeletingLastPathComponent];
+        NSURL *baseURL = [NSURL fileURLWithPath:u1];
         if (@available(iOS 9.0, *)) {
             [self loadFileURL:[NSURL fileURLWithPath:path2HTML] allowingReadAccessToURL:baseURL];
         } else {
