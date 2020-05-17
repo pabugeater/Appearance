@@ -4,11 +4,14 @@
 
 // Example: send JS message to Objective-C wrapper BCOWebView.m didReceiveScriptMessage():
 
+
+/*
 window.onload = function () {
     
-    //BCOWebViewSendJSMessage( 'Frog!' );
+    BCOWebViewSendJSMessage( 'Frog!' );
     
 } // end onload
+*/
 
 function BCOWebViewSendJSMessage ( msg ) {
     

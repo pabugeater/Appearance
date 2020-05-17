@@ -84,11 +84,6 @@
         } else {
             [self loadHTMLString:[NSString stringWithContentsOfURL:[NSURL fileURLWithPath:path2HTML] encoding:NSUTF8StringEncoding error:nil] baseURL:baseURL];
         }
-        self.checkJsStatus = ^(NSString *rc, NSError *error) {
-            if ( error ) {
-                NSLog(@"checkJsStatus :  rc=%@, error=%@", rc, error);
-            }
-        };
         return self;
     } else {
         return nil;
@@ -119,7 +114,7 @@
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     
     NSString *msg = (NSString *)message.body;
-    NSLog(@" Unknown BCOWebViewSendJSMessage '%@'.", msg);
+    NSLog(@" Unknown BCOWebViewSendJSMessage '%@'.", msg); // stub
     
 } // end didReceiveScriptMessage
 

@@ -21,7 +21,7 @@
         <div style="position:relative; top:-130px; ">
             <p>BCO take on WkWebView configured to handle Javascript Alert panels, inline videos, mailto: URLs, etc.
             <ul>
-                <li><a onclick="alert( 'Hello, world!' )"><u>Test</u></a>&nbsp&nbsp<i>alert( 'Hello, world!' )</i>.
+                <li><a onclick="alert( 'Hello, world!' )"><u>Test</u></a> JavaScript&nbsp&nbsp<i>alert( 'Hello, world!' )</i>.
                 <li>The following inline video element should autoplay and shred, silently:
                     <p>
                     <video poster="ShredderIcon@3x.png" autoplay loop muted playsinline  width='64' height='64' style='border-radius: 10%; ' >
@@ -52,11 +52,14 @@ bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html"
    contentController:self.view andFrame:self.view.bounds
    completionHandler:^(id __nullable result, NSError *__nullable error) {
        NSLog(@"BCOWebView in completion handler, result '%@'", result);
-       if ( error ) NSLog(@"BCOWebView initWithFile error: %@", error);
+       if ( ! error ) {
+           [self.view addSubview:bwv];
+           [bwv addConstraintsForView:self.view];
+       } else {
+           NSLog(@"BCOWebView initWithFile error: %@", error);
+       }
    }
 ];
-[self.view addSubview:bwv];
-[bwv addConstraintsForView:self.view];
                     </pre>
                     <li>Build notes:<br>
                         <ul>
@@ -77,7 +80,7 @@ BCOwebVoew.sh BCOWebView.h BCOWebView.m BCOwebView.html BCOWebView.js
             
             <details>
                 <summary><font size=4><a name="new">What's New?</a></font></summary>
-                <p><b>3.0 - 2020.05.01</b>
+                <p><b>3.0 - 2020.06.02</b>
                 <ul>
                     <li>Use CSS styling now for dark mode, remove all old Appearance code.
                     <li>Because old Appearance configures WkWebView just how I want it, keep code and rename class to BCOWebView.
