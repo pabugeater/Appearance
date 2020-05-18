@@ -48,7 +48,7 @@
     pref.javaScriptEnabled = YES;
     configuration.preferences = pref;
 #ifdef kBCOWebViewX
-    if ( @available(macOS 12.0, *) ) {
+    if ( @available(macOS 10.12, *) ) {
         configuration.mediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypeNone;
     }
 #else
