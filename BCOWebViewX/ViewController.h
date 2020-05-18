@@ -10,10 +10,11 @@
 #import <Cocoa/Cocoa.h>
 #import "BCOWebView.h"
 #import "AppDelegate.h"
+#import "ScriptMessageHandler.h"
 
 @interface ViewController : NSViewController <NSWindowDelegate>
 
-@property (nonatomic, retain ) BCOWebView *bwv;
+@property (nonatomic, retain ) BCOWebView *__nullable bwv;
 
 @end
 

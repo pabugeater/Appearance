@@ -39,8 +39,9 @@
 
 @implementation BCOWebView
 
-- (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame completionHandler:(void (^)(id, NSError *error))completionHandler {
+- (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame scriptMessageHandler:(void (^__nullable)(WKUserContentController *userContentController, WKScriptMessage *scriptMessage))scriptMessageHandler completionHandler:(void (^)(id, NSError *error))completionHandler {
     
+    self.scriptMessageHandler = scriptMessageHandler;
     self.initCompletionHandler = completionHandler;
     WKWebViewConfiguration *configuration = [[WKWebViewConfiguration alloc] init];
     WKPreferences *pref = [[WKPreferences alloc] init];
@@ -113,15 +114,19 @@
 
 - (void)userContentController:(WKUserContentController *)userContentController didReceiveScriptMessage:(WKScriptMessage *)message {
     
-    NSString *msg = (NSString *)message.body;
-    NSLog(@" Unknown BCOWebViewSendJSMessage '%@'.", msg); // stub
+    if ( self.scriptMessageHandler ) {
+        self.scriptMessageHandler( userContentController, message );
+    } else {
+        [self webView:self runJavaScriptAlertPanelWithMessage:[NSString stringWithFormat:@"%@",message.body] initiatedByFrame:message.frameInfo completionHandler:^{}];
+    }
     
 } // end didReceiveScriptMessage
 
 -(void)webView:(WKWebView *)webView runJavaScriptAlertPanelWithMessage:(NSString *)message initiatedByFrame:(WKFrameInfo *)frame completionHandler:(void (^)(void))WVcompletionHandler {
     
+    NSString *name = [[frame.request.URL lastPathComponent] stringByDeletingPathExtension];
 #ifndef kBCOWebViewX
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(@"BCOWebView", nil) message: message preferredStyle: UIAlertControllerStyleAlert];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:NSLocalizedString(name, nil) message: message preferredStyle: UIAlertControllerStyleAlert];
     UIAlertAction *okAction = [UIAlertAction actionWithTitle:NSLocalizedString(@"OK", @"OK action") style:UIAlertActionStyleDefault handler:^(UIAlertAction *action) { WVcompletionHandler(); }];
     [alert addAction:okAction];
     UIViewController *vc = self.contentController;
@@ -132,8 +137,9 @@
     }
 #else
     NSAlert *alert = [[NSAlert alloc] init];
+    [alert setMessageText:name];
+    [alert setInformativeText:message];
     [alert addButtonWithTitle:@"OK"];
-    [alert setMessageText:message];
     [alert runModal];
     WVcompletionHandler();
 #endif

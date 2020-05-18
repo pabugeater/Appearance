@@ -13,12 +13,12 @@ window.onload = function () {
 } // end onload
 */
 
-function BCOWebViewSendJSMessage ( msg ) {
+function BCOWebViewSendJSMessage ( obj ) {
     
     // Send a message to our Objective-C wrapper.
     
     try {
-        window.webkit.messageHandlers.BCOWebViewSendJSMessage.postMessage( msg );
+        window.webkit.messageHandlers.BCOWebViewSendJSMessage.postMessage( obj );
     }
     finally {
         //Block of code to be executed regardless of the try / catch result

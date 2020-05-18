@@ -15,6 +15,7 @@
     [super viewWillAppear:animated];
     self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html"
                               contentController:self andFrame:self.view.bounds
+                           scriptMessageHandler:[[ScriptMessageHandler alloc] init].scriptMessageHandler
                               completionHandler:^(id __nullable result, NSError *__nullable error) {
             NSLog(@"BCOWebView in completion handler, result '%@'", result);
             if ( ! error ) {

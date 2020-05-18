@@ -41,8 +41,10 @@
     self.hwc = [[HelpWindowController alloc] initWithWindowNibName:@"HelpWindowController"];
     NSWindow *w = self.hwc.window; // referencing the window instantiates and displays it
     NSView *v = w.contentView;
-    self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html" contentController:self.hwc andFrame:v.frame completionHandler:^(id __nullable result, NSError *__nullable error) {
-            NSLog(@"BCOWebView in completion handler, result '%@'", result);
+    self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html" contentController:self.hwc andFrame:v.frame
+                           scriptMessageHandler:[[ScriptMessageHandler alloc] init].scriptMessageHandler
+                              completionHandler:^(id __nullable result, NSError *__nullable error) {
+            NSLog(@"BCOWebViewX AppDelegate in completion handler, result '%@'", result);
             if ( ! error ) {
                 [v addSubview:self.bwv];
                 [self.bwv addConstraintsForView:v];

@@ -9,12 +9,17 @@
 #import <Cocoa/Cocoa.h>
 #import "HelpWindowController.h"
 #import "BCOWebView.h"
+#import "ScriptMessageHandler.h"
+
+NS_ASSUME_NONNULL_BEGIN
 
 @interface AppDelegate : NSObject <NSApplicationDelegate>
 
 @property (nonatomic, strong) NSString *version;
-@property (nonatomic, strong) HelpWindowController *hwc;
+@property (nonatomic, strong) HelpWindowController *__nullable hwc;
 @property (nonatomic, strong) BCOWebView *bwv;
 
 @end
+
+NS_ASSUME_NONNULL_END
 

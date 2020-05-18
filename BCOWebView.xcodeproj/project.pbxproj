@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		76497F262471D456009EC724 /* ScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 76497F252471D456009EC724 /* ScriptMessageHandler.m */; };
+		76497F272471D456009EC724 /* ScriptMessageHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 76497F252471D456009EC724 /* ScriptMessageHandler.m */; };
 		7654949D245C224D00561E01 /* Credits.html in Resources */ = {isa = PBXBuildFile; fileRef = 7654949C245C224D00561E01 /* Credits.html */; };
 		7666460B21BD786C00DB519B /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666460A21BD786C00DB519B /* AppDelegate.m */; };
 		7666460E21BD786C00DB519B /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7666460D21BD786C00DB519B /* ViewController.m */; };
@@ -53,6 +55,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		76497F242471D456009EC724 /* ScriptMessageHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ScriptMessageHandler.h; sourceTree = "<group>"; };
+		76497F252471D456009EC724 /* ScriptMessageHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ScriptMessageHandler.m; sourceTree = "<group>"; };
 		7654949C245C224D00561E01 /* Credits.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Credits.html; sourceTree = "<group>"; };
 		7666460621BD786C00DB519B /* BCOWebView.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BCOWebView.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7666460921BD786C00DB519B /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -116,6 +120,8 @@
 				7666462B21BD857F00DB519B /* BCOWebViewIcon-256x256.png */,
 				76E6CCF1245B1C5A00B5BE8B /* BCOWebViewIcon-1024x1024.png */,
 				7668130821C8721400E5D2E5 /* Images.xcassets */,
+				76497F242471D456009EC724 /* ScriptMessageHandler.h */,
+				76497F252471D456009EC724 /* ScriptMessageHandler.m */,
 				76A05D6D2348CCD3000093BD /* Shredder.mov */,
 				76F03337243FE2D70085B442 /* ShredderIcon@3x.png */,
 				7666460821BD786C00DB519B /* BCOWebView */,
@@ -329,6 +335,7 @@
 			files = (
 				7666460E21BD786C00DB519B /* ViewController.m in Sources */,
 				7666461921BD786E00DB519B /* main.m in Sources */,
+				76497F262471D456009EC724 /* ScriptMessageHandler.m in Sources */,
 				7666460B21BD786C00DB519B /* AppDelegate.m in Sources */,
 				7666462821BD799B00DB519B /* BCOWebView.m in Sources */,
 			);
@@ -343,6 +350,7 @@
 				7666463521BDA1AF00DB519B /* AppDelegate.m in Sources */,
 				7666464521BDA60A00DB519B /* BCOWebView.m in Sources */,
 				76C9F38B21BFE2BE008B06D8 /* HelpWindowController.m in Sources */,
+				76497F272471D456009EC724 /* ScriptMessageHandler.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

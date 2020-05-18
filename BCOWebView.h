@@ -19,9 +19,10 @@ NS_ASSUME_NONNULL_BEGIN
 #endif
 
 @property( nonatomic, strong ) id contentController;
-@property( nonatomic, copy ) void(^initCompletionHandler)(NSString *__nullable returnCode, NSError *__nullable error);
+@property( nonatomic, copy ) void(^__nullable initCompletionHandler)(NSString *__nullable returnCode, NSError *__nullable error);
+@property( nonatomic, copy ) void(^__nullable scriptMessageHandler)(WKUserContentController *__nonnull userContentController, WKScriptMessage *__nonnull scriptMessage);
 
-- (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame  completionHandler:(void (^__nullable)(id, NSError *__nullable error))completionHandler;
+- (id) initWithFile:(NSString *)file contentController:(id)contentController andFrame:(CGRect)frame scriptMessageHandler:(void (^__nullable)(WKUserContentController *userContentController, WKScriptMessage *scriptMessage))scriptMessageHandler completionHandler:(void (^__nullable)(id, NSError *__nullable error))completionHandler;
 - (void) addConstraintsForView:(id)view;
 
 @end

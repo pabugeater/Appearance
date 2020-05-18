@@ -20,8 +20,9 @@
     
     self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html"
                               contentController:self.view andFrame:self.view.bounds
+                           scriptMessageHandler:[[ScriptMessageHandler alloc] init].scriptMessageHandler
                               completionHandler:^(id __nullable result, NSError *__nullable error) {
-            NSLog(@"BCOWebView in completion handler, result '%@'", result);
+            NSLog(@"BCOWebViewX ViewController in completion handler, result '%@'", result);
             if ( ! error ) {
                 [self.view addSubview:self.bwv];
                 [self.bwv addConstraintsForView:self.view];

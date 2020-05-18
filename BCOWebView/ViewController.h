@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BCOWebView.h"
+#import "ScriptMessageHandler.h"
 
 @interface ViewController : UIViewController
 
