@@ -219,7 +219,7 @@
 		766645FE21BD786C00DB519B /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 1140;
+				LastUpgradeCheck = 1240;
 				ORGANIZATIONNAME = "Steve Lidie";
 				TargetAttributes = {
 					7666460521BD786C00DB519B = {
@@ -307,7 +307,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nFIX_BCOWEBVIEW_HTML=NO ${SRCROOT}/BCOWebView.sh ${SRCROOT} ${TARGET_BUILD_DIR}/BCOWebView.app \"$vn ($bn)\" BCOWebView.html\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Increment build number.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$((0$buildNumber))\nbuildNumber=$(($buildNumber + 1))\nbuildNumber=$(printf \"%05o\" $buildNumber)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\n\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nFIX_BCOWEBVIEW_HTML=NO ${SRCROOT}/BCOWebView.sh ${SRCROOT} ${TARGET_BUILD_DIR}/BCOWebView.app \"$vn ($bn)\" BCOWebView.html\n";
 		};
 		7696327422D0033300D3DC07 /* ShellScript */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -324,7 +324,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nFIX_BCOWEBVIEW_HTML=NO ${SRCROOT}/BCOWebView.sh ${SRCROOT} ${TARGET_BUILD_DIR}/BCOWebViewX.app/Contents/Resources \"$vn ($bn)\" BCOWebView.html\n";
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n# Increment build number.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nbuildNumber=$((0$buildNumber))\nbuildNumber=$(($buildNumber + 1))\nbuildNumber=$(printf \"%05o\" $buildNumber)\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${INFOPLIST_FILE}\"\n\nbn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${INFOPLIST_FILE}\")\nvn=$(/usr/libexec/PlistBuddy -c \"Print CFBundleShortVersionString\" \"${INFOPLIST_FILE}\")\nFIX_BCOWEBVIEW_HTML=NO ${SRCROOT}/BCOWebView.sh ${SRCROOT} ${TARGET_BUILD_DIR}/BCOWebViewX.app/Contents/Resources \"$vn ($bn)\" BCOWebView.html\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -410,6 +410,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -466,6 +467,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

@@ -19,7 +19,7 @@
     [[NSApplication sharedApplication] mainWindow].delegate = self;
     
     self.bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html"
-                              contentController:self.view andFrame:self.view.bounds
+                              contentController:self andFrame:self.view.bounds
                            scriptMessageHandler:[[ScriptMessageHandler alloc] init].scriptMessageHandler
                               completionHandler:^(id __nullable result, NSError *__nullable error) {
             NSLog(@"BCOWebViewX ViewController in completion handler, result '%@'", result);

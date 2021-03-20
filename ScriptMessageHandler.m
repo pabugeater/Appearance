@@ -27,6 +27,12 @@
                     NSString *className = NSStringFromClass( [messageItems[i] class] );
                     out = [NSString stringWithFormat:@"%@\nIndex %ld, class %@: %@", out, i, className, messageItems[i]];
                 }
+            } else if ( [scriptMessage.body isKindOfClass:[NSString class]] && [scriptMessage.body isEqualToString:@"evaluateJavaScript"]) {
+                NSInteger baseInt = arc4random() % 16777216;
+                NSString *hex = [NSString stringWithFormat:@"%06lX", (long)baseInt];
+                NSString *js = [NSString stringWithFormat:@"document.getElementById('evaluateJavaScript').style['background-color'] = '#%@';", hex];
+                [scriptMessage.webView evaluateJavaScript:js completionHandler:nil];
+                return;
             } else {
                 out = [NSString stringWithFormat:@"%@\n\n%@", out, scriptMessage.body];
             }

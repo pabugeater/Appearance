@@ -19,20 +19,21 @@
         <center><font size=3><b><span style="position:relative; width:128px; height:128px; left:64px; top:-150px; ">&nbsp</span></b></font></center>
         <center><font size=3><span style="position:relative; width:128px; height:128px; left:64px; top:-150px; ">1.fixme</span></font></center>
         <div style="position:relative; top:-130px; ">
-            <p>BCO take on WkWebView configured to handle Javascript alert panels and WebKit messages, inline videos, mailto: URLs, etc.
+            <p>BCO take on WkWebView configured to handle Javascript alert panels and WebKit messages, inline videos, mailto: URLs, etc: anything used by any BCO HTML.
             <ul>
-                <li>Test JavaScript interfaces:</li>
+                <li>Click to test JavaScript interfaces:</li>
                     <ul>
                         <li onclick="alert( 'Hello, world!' )">alert( 'Hello, world!' )</li>
-                        <li>Talk to Obj-C via BCOWebViewSendJSMessage( msg ):</li>
+                        <li>Talk to Obj-C via BCOWebViewSendJSMessage( <i>msg</i> ), where <i>msg</i> is:</li>
                             <ul>
-                                <li onclick="BCOWebViewSendJSMessage ( 123.456 )">123.456</li>
-                                <li onclick="BCOWebViewSendJSMessage ( 'Hello, world!' )">'Hello, world!</li>
-                                <li onclick="BCOWebViewSendJSMessage ( new Date() )">new Date()</li>
-                                <li onclick="BCOWebViewSendJSMessage ( [ 1,'hi',3 ,4 ] )">[ 1,'hi', 3, 4 ]</li>
-                                <li onclick="BCOWebViewSendJSMessage ( { k1:'v1', k2:'v2' } )">{ k1:'v1', k2:'v2' }</li>
-                                <li onclick="BCOWebViewSendJSMessage ( null )">null</li>
+                                <li onclick="BCOWebViewSendJSMessage ( 123.456 ); ">123.456</li>
+                                <li onclick="BCOWebViewSendJSMessage ( 'Hello, world!' ); ">'Hello, world!'</li>
+                                <li onclick="BCOWebViewSendJSMessage ( new Date() ); ">new Date()</li>
+                                <li onclick="BCOWebViewSendJSMessage ( [ 1,'hi',3 ,4 ] ); ">[ 1,'hi',3 ,4 ]</li>
+                                <li onclick="BCOWebViewSendJSMessage ( { k1:'v1', k2:'v2' } ); ">{ k1:'v1', k2:'v2' }</li>
+                                <li onclick="BCOWebViewSendJSMessage ( null ); ">null</li>
                             </ul>
+                        <li onclick="BCOWebViewSendJSMessage ( 'evaluateJavaScript' ); ">Use <span id='evaluateJavaScript'>evaluateJavaScript:completionHandler:</span> to randomly change background color</li>
                    </ul>
                 <li>From macOS use Contact link below to test mailto: with subject.
                 <li>The following inline video element should autoplay and shred, silently:</li>
@@ -48,7 +49,7 @@
             <details>
                 <summary><font size=4><a name="intro">Usage</a></font></summary>
                 <ul>
-                    <li>Add this handful of additional statements to your HTML:
+                    <li>Add these additional statements to your HTML:
                         <ul>
                             <li>Head:<br>
                                 &lt;link rel="stylesheet" type="text/css" href="https://www.bigcatos.com/BigCatOs/styles/styles.css" /&gt;
@@ -62,7 +63,7 @@
 #include "BCOWebView.h"
 __block BCOWebView *bwv;
 bwv = [[BCOWebView alloc] initWithFile:@"BCOWebView.html"
-   contentController:self.view andFrame:self.view.bounds
+   contentController:self andFrame:self.view.bounds
    scriptMessageHandler:^(WKUserContentController *__nonnull
      userContentController, WKScriptMessage *__nonnull scriptMessage) {
        id msgClass = [scriptMessage.body class];
@@ -99,7 +100,14 @@ BCOWebView.sh srcFolder/i.app/Contents/Resources \
             
             <details>
                 <summary><font size=4><a name="new">What's New?</a></font></summary>
-                <p><b>3.0 - 2020.06.02</b>
+                <p><b>3.1 - 2021.03.21</b>
+                <ul>
+                    <li>Add evaluateJavaScript:completionHandler: test.
+                    <li>Update documentation.
+                    <li>Update for iOS 14.4.1 and macOS 11.2.3.
+                    </ul>
+                
+               <p><b>3.0 - 2020.06.02</b>
                 <ul>
                     <li>Use CSS styling now for dark mode, remove all old Appearance code.
                     <li>Because old Appearance configures WkWebView just how I want it, keep code and rename class to BCOWebView.
@@ -201,7 +209,7 @@ BCOWebView.sh srcFolder/i.app/Contents/Resources \
                 <p><a href="#toc" target="_self">Topics</a>
             </details>
             
-            <p><p style="line-height:14.4px;text-align:center;margin-bottom:0px;margin-top:0px;font-size:10px;">Copyright (&copy) 2018 - 2020 BigCatOs.
+            <p><p style="line-height:14.4px;text-align:center;margin-bottom:0px;margin-top:0px;font-size:10px;">Copyright (&copy) 2018 - 2021 BigCatOs.
             All rights reserved.&nbsp;&nbsp; | &nbsp;&nbsp;<a href="mailto:support@bigcatos.com?subject=BCOWebView 1.fixme, Comment / Question">Contact</a></p>
             
         </div>
